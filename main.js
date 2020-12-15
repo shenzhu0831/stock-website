@@ -1,19 +1,28 @@
-import matchStockCode from './script/search.js';
+import getStockData from './script/search.js';
 
 const searchInput = document.getElementById('search-input');
 const searchInputIcon = document.getElementById('search-icon');
 
-let currentStockData;
+let reportYear;
+let reportRatioYear;
+let chartAssetYear;
 
 searchInput.addEventListener('keydown', function (event) {
     if (event.code === 'Enter') {
-        currentStockData = matchStockCode(this.value);
+        getStockData(this.value)
+            .then((data) => {
+                ({ reportYear, reportRatioYear, chartAssetYear } = data);
+            })
+            .catch((error) => console.error(error));
         this.value = '';
-        console.table();
     }
 });
 
 searchInputIcon.addEventListener('click', () => {
-    currentStockData = matchStockCode(searchInput.value);
+    getStockData(this.value)
+        .then((data) => {
+            ({ reportYear, reportRatioYear, chartAssetYear } = data);
+        })
+        .catch((error) => console.error(error));
     searchInput.value = '';
 });
