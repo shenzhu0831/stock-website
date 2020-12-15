@@ -1,0 +1,24 @@
+{
+  "name": "stock-website",
+  "version": "1.0.0",
+  "description": "### git commit guide line - 安裝套件、專案建制相關：build(package): message - 新增<版面/功能>：feat(component/feature): message - 標點符號或格式修正：style(component/feature): message - 重構<版面/功能>：refactor(component/feature): message - 修理<版面/功能>：fix(component/feature): message",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass --watch scss/:css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shenzhu0831/stock-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shenzhu0831/stock-website/issues"
+  },
+  "homepage": "https://github.com/shenzhu0831/stock-website#readme",
+  "dependencies": {
+    "sass": "^1.30.0"
+  }
+}

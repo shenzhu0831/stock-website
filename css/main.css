@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  margin: 0 135px;
+}
+
+.line {
+  border-right: 1px solid;
+  margin: 0 16px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 17px;
+  margin-bottom: 0;
+}
+
+.menu {
+  width: 282px;
+  margin-top: 75px;
+}
+.menu h1 {
+  text-align: center;
+}
+
+.search {
+  width: 282px;
+  height: 55px;
+  margin: 30px 0;
+  padding: 15px;
+  border-radius: 100px;
+  border-color: #c4c4c4;
+}
+.search_wrap {
+  position: relative;
+}
+.search_img {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  right: 25px;
+  top: 42px;
+}
+
+.data {
+  margin-top: 75px;
+}
+.data_title {
+  display: flex;
+  align-items: center;
+}
+
+.sub_title {
+  display: flex;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: white;
+}
+
+/*# sourceMappingURL=main.css.map */

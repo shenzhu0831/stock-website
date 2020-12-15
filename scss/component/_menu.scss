@@ -1,0 +1,27 @@
+@use "../theme/font";
+@use "../theme/color";
+.menu {
+    width: 282px;
+    margin-top: 75px;
+    & h1 {
+        text-align: center;
+    }
+}
+.search {
+    width: 282px;
+    height: 55px;
+    margin: 30px 0;
+    padding: 15px;
+    border-radius: 100px;
+    border-color: color.$light-gray;
+    &_wrap {
+        position: relative;
+    }
+    &_img {
+        position: absolute;
+        width: 29px;
+        height: 29px;
+        right: 25px;
+        top: 42px;
+    }
+}
