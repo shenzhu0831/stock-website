@@ -1,0 +1,39 @@
+const accessibleStockCode = ['2330', '3043'];
+
+function getStockData(stockCodeString) {
+    if (accessibleStockCode.includes(stockCodeString)) return;
+
+    let mockApiPrefix;
+
+    switch (String(stockCodeString)) {
+        case '2330':
+            mockApiPrefix = 'https://5fbd1e2b3f8f90001638cc76.mockapi.io/';
+            break;
+
+        case '3043':
+            mockApiPrefix = 'https://5fbf2d965923c90016e6ba2d.mockapi.io/';
+            break;
+
+        default:
+            throw "can't match stock code.";
+    }
+
+    let apiList = ['reportYear', 'reportRatioYear', 'chartAssetYear'];
+    let stockData = {};
+
+    apiList.forEach((apiName) => {
+        const url = mockApiPrefix + apiName + stockCodeString;
+
+        fetch(url)
+            .then((result) => {
+                if (result.ok) return result.json();
+            })
+            .then((data) => {
+                stockData[apiName] = data;
+            });
+    });
+
+    return stockData;
+}
+
+export default getStockData;
