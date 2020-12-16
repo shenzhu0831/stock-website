@@ -1,5 +1,5 @@
 import getStockData from './scripts/search.js';
-import {createTitle, createBody} from './dynamicComponents/createBalanceSheet.js';
+import { createTitle, createBody } from './dynamicComponents/createBalanceSheet.js';
 
 const searchInput = document.getElementById('search-input');
 const searchInputIcon = document.getElementById('search-icon');
@@ -42,7 +42,11 @@ function createTable(titlText, topText, incomeData) {
 }
 
 balanceSheetButton.addEventListener('click', function () {
-    const balanceSheet = createTable('title test', 'test top', reportYear.year_balance_sheets);
+    const balanceSheet = createTable(
+        'title test',
+        'test top',
+        reportYear.year_balance_sheets
+    );
     displayArea.textContent = '';
     displayArea.append(balanceSheet);
 });

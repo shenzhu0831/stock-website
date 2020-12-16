@@ -43,51 +43,47 @@ function createBody(formTitleText) {
     formTitle = document.createElement('div');
     formTitle.className = 'form_title';
     formTitle.innerText = formTitleText;
-    
+
     wrapper.append(formTitle);
 
-
     // fixme 這裡只是再次確認是 reportYear 是 array
-    
-    dataArea.setRowName = function(incomeData) {
-    let dataArray = Array.from(incomeData);
-    let gridRows = 1;
-    Object.keys(dataArray[0]).forEach((key) => {
-        gridRows += 1;
-        const formTitle = document.createElement('div');
-        
-        // 如果 key 是 year, 表示是第一行
-        if (key === 'year') {
-            formTitle.innerHTML = `<p>期別</p><p>種類</p>`;
-        } else {
-            formTitle.innerText = translate(key);
-        }
 
-        wrapper.append(formTitle);
-    });
-    wrapper.style.gridTemplateRows = `repeat(${gridRows}, 1fr)`;
-    }
-    
-    dataArea.setCell = function (incomeData) {
-    let dataArray = Array.from(incomeData);
-    dataArray.forEach((obj) => {
-        for (let key in obj) {
-            const formItem = document.createElement('div');
+    dataArea.setRowName = function (incomeData) {
+        let dataArray = Array.from(incomeData);
+        let gridRows = 1;
+        Object.keys(dataArray[0]).forEach((key) => {
+            gridRows += 1;
+            const formTitle = document.createElement('div');
+
             // 如果 key 是 year, 表示是第一行
             if (key === 'year') {
-                formItem.innerHTML = `<p>${obj[key]}</p><p>合併</p>`;
+                formTitle.innerHTML = `<p>期別</p><p>種類</p>`;
             } else {
-                formItem.innerText = obj[key];
+                formTitle.innerText = translate(key);
             }
-            wrapper.append(formItem);
-        }
-    });
-    wrapper.style.gridTemplateColumns = `3fr repeat(${dataArray.length}, 1fr)`;
-    }
+
+            wrapper.append(formTitle);
+        });
+        wrapper.style.gridTemplateRows = `repeat(${gridRows}, 1fr)`;
+    };
+
+    dataArea.setCell = function (incomeData) {
+        let dataArray = Array.from(incomeData);
+        dataArray.forEach((obj) => {
+            for (let key in obj) {
+                const formItem = document.createElement('div');
+                // 如果 key 是 year, 表示是第一行
+                if (key === 'year') {
+                    formItem.innerHTML = `<p>${obj[key]}</p><p>合併</p>`;
+                } else {
+                    formItem.innerText = obj[key];
+                }
+                wrapper.append(formItem);
+            }
+        });
+        wrapper.style.gridTemplateColumns = `3fr repeat(${dataArray.length}, 1fr)`;
+    };
     return dataArea;
 }
 
-export {
-    createTitle,
-    createBody,
-}
+export { createTitle, createBody };
