@@ -1,4 +1,4 @@
-import getStockData from './script/search.js';
+import getStockData from './scripts/search.js';
 
 const searchInput = document.getElementById('search-input');
 const searchInputIcon = document.getElementById('search-icon');
