@@ -7,7 +7,7 @@ var myLineChart = new Chart(canvas, {
     datasets: [
       {
         label: '應收帳款收現天數',
-        data: [3, 5, 4, 6, 4, 7, 8, 7],
+        data: [6, 6, 6, 6, 6, 6, 6, 6],
         backgroundColor: 'rgba(0, 0, 0, 0)',
         pointBackgroundColor: 'rgba(45, 135, 252, 1)',
         borderColor: 'rgba(45, 135, 252, 1)',
@@ -15,7 +15,7 @@ var myLineChart = new Chart(canvas, {
       },
       {
         label: '銷貨天數',
-        data: [3, 4, 7, 8, 7, 5, 4, 6],
+        data: [4, 3, 4, 5, 5, 6, 4, 3],
         backgroundColor: 'rgba(0, 0, 0, 0)',
         pointBackgroundColor: 'rgba(255, 99, 132, 1)',
         borderColor: 'rgba(255, 99, 132, 1)',
@@ -23,7 +23,7 @@ var myLineChart = new Chart(canvas, {
       },
       {
         label: '應付帳款週轉天數',
-        data: [5, 7, 5, 4, 6, 4, 7, 8],
+        data: [5, 6, 5, 5, 6, 5, 6, 5],
         backgroundColor: 'rgba(0, 0, 0, 0)',
         pointBackgroundColor:'rgba(138, 44, 201, 1)',
         borderColor: 'rgba(138, 44, 201, 1)',
@@ -31,7 +31,7 @@ var myLineChart = new Chart(canvas, {
       },
       {
         label: '營運週轉天數',
-        data: [2, 4, 5, 7, 8, 4, 6, 4],
+        data: [2, 1, 2, 2, 3, 2, 3, 1],
         backgroundColor: 'rgba(0, 0, 0, 0)',
         pointBackgroundColor: 'rgba(255, 128, 43, 1)',
         borderColor: 'rgba(255, 128, 43, 1)',
@@ -39,7 +39,7 @@ var myLineChart = new Chart(canvas, {
       },
       {
         label: '現金週轉天數',
-        data: [4, 6, 4, 2, 4, 5, 7, 8],
+        data: [5, 4, 5, 4, 5, 5, 6, 4],
         backgroundColor: 'rgba(0, 0, 0, 0)',
         pointBackgroundColor: 'rgba(56, 201, 82, 1)',
         borderColor: 'rgba(56, 201, 82, 1)',
