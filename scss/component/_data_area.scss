@@ -13,26 +13,27 @@
     margin-right: 30px;
 }
 
-input {
+.year_form,
+.quarter_form {
     padding: 0;
     border: none;
     background-color: white;
     &:focus {
-        box-shadow: inset 0px -5px 0px 0px color.$light-gray;
+        box-shadow: inset 0px -5px 0px 0px color.$dark-gray;
     }
 }
 
-.wrapper {
+.form_wrapper {
     margin-top: 27px;
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: 3fr repeat(9, 1fr);
     grid-auto-rows: 20px;
 }
 
-.wrapper_title {
+.form_title {
     padding: 10px 0;
     grid-column-start: 1;
-    grid-column-end: 10;
+    grid-column-end: 11;
     grid-row-start: 1;
     grid-row-end: 3;
     text-align: center;
@@ -40,10 +41,11 @@ input {
     background-color: color.$dark-blue;
 }
 
-.wrapper_category {
-    background-color: color.$gray;
-}
-
-.wrapper_item {
+.form_item {
+    &_title {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: color.$lighter-gray;
+    }
     background-color: color.$lighter-gray;
 }

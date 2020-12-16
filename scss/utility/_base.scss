@@ -15,3 +15,6 @@ h2 {
     font-size: font.$subtitle;
     margin-bottom: 0;
 }
+input:focus {
+    outline: none;
+}

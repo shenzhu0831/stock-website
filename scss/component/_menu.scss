@@ -4,11 +4,14 @@
     margin-top: 75px;
     & h1 {
         text-align: center;
-        font-weight: 700;
     }
 }
-input:focus {
-    outline: none;
+.card-header .mb-0 .btn {
+    text-decoration: none;
+    color: color.$black;
+    &:focus {
+        box-shadow: none;
+    }
 }
 .search {
     width: 282px;
@@ -18,7 +21,7 @@ input:focus {
     font-size: font.$paragraph;
     border: solid 3px;
     border-radius: 100px;
-    border-color: color.$light-gray;
+    border-color: color.$dark-gray;
     &_wrap {
         position: relative;
     }
@@ -29,4 +32,10 @@ input:focus {
         right: 25px;
         top: 42px;
     }
+}
+.card:nth-child(odd) {
+    background-color: color.$light-gray;
+}
+.card:nth-child(even) {
+    background-color: color.$dark-gray;
 }
