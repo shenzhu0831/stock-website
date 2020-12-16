@@ -85,17 +85,17 @@ function createBody(formTitleText, reportYear) {
     return dataArea;
 }
 
-function createDataTable() {
+function createBalanceSheet(incomeData) {
     const container = document.createElement('div');
     const title = createTitle('test title text');
-    const body = createBody('top text', year);
+    const body = createBody('top text', incomeData);
 
     container.append(title, body);
     return container;
 }
 
 export {
-    createDataTable,
+    createBalanceSheet,
     createTitle,
     createBody,
 }
