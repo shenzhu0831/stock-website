@@ -29,8 +29,7 @@ function createTitle(h1Text) {
     return container;
 }
 
-// 直接裝假資料 year_balance_sheets
-function createBody(formTitleText, reportYear) {
+function createBody(formTitleText) {
     let dataArea, wrapper, formTitle;
     dataArea = document.createElement('div');
     dataArea.className = 'data_area';
@@ -49,9 +48,9 @@ function createBody(formTitleText, reportYear) {
 
 
     // fixme 這裡只是再次確認是 reportYear 是 array
-    let dataArray = Array.from(reportYear);
-
-    // 生成 左側中文項目
+    
+    dataArea.setRowName = function(incomeData) {
+    let dataArray = Array.from(incomeData);
     let gridRows = 1;
     Object.keys(dataArray[0]).forEach((key) => {
         gridRows += 1;
@@ -67,8 +66,10 @@ function createBody(formTitleText, reportYear) {
         wrapper.append(formTitle);
     });
     wrapper.style.gridTemplateRows = `repeat(${gridRows}, 1fr)`;
-
-    // 生成其他資料表格
+    }
+    
+    dataArea.setCell = function (incomeData) {
+    let dataArray = Array.from(incomeData);
     dataArray.forEach((obj) => {
         for (let key in obj) {
             const formItem = document.createElement('div');
@@ -82,21 +83,11 @@ function createBody(formTitleText, reportYear) {
         }
     });
     wrapper.style.gridTemplateColumns = `3fr repeat(${dataArray.length}, 1fr)`;
-
+    }
     return dataArea;
 }
 
-function createBalanceSheet(incomeData) {
-    const container = document.createElement('div');
-    const title = createTitle('test title text');
-    const body = createBody('top text', incomeData);
-
-    container.append(title, body);
-    return container;
-}
-
 export {
-    createBalanceSheet,
     createTitle,
     createBody,
 }

@@ -1,5 +1,5 @@
 import getStockData from './scripts/search.js';
-import {createBalanceSheet} from './dynamicComponents/createBalanceSheet.js';
+import {createTitle, createBody} from './dynamicComponents/createBalanceSheet.js';
 
 const searchInput = document.getElementById('search-input');
 const searchInputIcon = document.getElementById('search-icon');
@@ -30,8 +30,19 @@ searchInputIcon.addEventListener('click', () => {
     searchInput.value = '';
 });
 
+function createTable(titlText, topText, incomeData) {
+    const container = document.createElement('div');
+    const title = createTitle(titlText);
+    const body = createBody(topText, incomeData);
+    body.setRowName(incomeData);
+    body.setCell(incomeData);
+
+    container.append(title, body);
+    return container;
+}
+
 balanceSheetButton.addEventListener('click', function () {
-    const balanceSheet = createBalanceSheet(reportYear.year_balance_sheets);
+    const balanceSheet = createTable('title test', 'test top', reportYear.year_balance_sheets);
     displayArea.textContent = '';
     displayArea.append(balanceSheet);
 });
