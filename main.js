@@ -1,5 +1,5 @@
 import getStockData from './scripts/search.js';
-import { createTitle, createBody } from './dynamicComponents/createBalanceSheet.js';
+import { createTitle, createBody } from './dynamicComponents/createSheet.js';
 
 const searchInput = document.getElementById('search-input');
 const searchInputIcon = document.getElementById('search-icon');
