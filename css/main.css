@@ -21,10 +21,10 @@ input:focus {
   outline: none;
 }
 
-.menu {
+nav {
   margin-top: 75px;
 }
-.menu h1 {
+nav h1 {
   text-align: center;
 }
 
@@ -110,12 +110,18 @@ input:focus {
   background-color: #333b40;
 }
 
-.form_item {
-  background-color: #f4f4f4;
-}
 .form_item_title {
+  padding: 10px 0;
   grid-column-start: 1;
   grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  background-color: #f4f4f4;
+}
+.form_item_year {
+  padding: 10px 0;
+  grid-row-start: 3;
+  grid-row-end: 5;
   background-color: #f4f4f4;
 }
 
