@@ -46,17 +46,16 @@ function createBody(formTitleText, reportYear) {
     formTitle.innerText = formTitleText;
     
     wrapper.append(formTitle);
-    // 把 grid container 裡面的排列順序, 改成排滿"列"
-    wrapper.style.gridAutoFlow = 'column';
 
 
     // fixme 這裡只是再次確認是 reportYear 是 array
     let dataArray = Array.from(reportYear);
 
     // 生成 左側中文項目
+    let gridRows = 1;
     Object.keys(dataArray[0]).forEach((key) => {
+        gridRows += 1;
         const formTitle = document.createElement('div');
-        formTitle.className = 'form_item_title';
         
         // 如果 key 是 year, 表示是第一行
         if (key === 'year') {
@@ -67,12 +66,12 @@ function createBody(formTitleText, reportYear) {
 
         wrapper.append(formTitle);
     });
+    wrapper.style.gridTemplateRows = `repeat(${gridRows}, 1fr)`;
 
     // 生成其他資料表格
     dataArray.forEach((obj) => {
         for (let key in obj) {
             const formItem = document.createElement('div');
-            formItem.className = 'form_item';
             // 如果 key 是 year, 表示是第一行
             if (key === 'year') {
                 formItem.innerHTML = `<p>${obj[key]}</p><p>合併</p>`;
@@ -82,6 +81,8 @@ function createBody(formTitleText, reportYear) {
             wrapper.append(formItem);
         }
     });
+    wrapper.style.gridTemplateColumns = `3fr repeat(${dataArray.length}, 1fr)`;
+
     return dataArea;
 }
 
