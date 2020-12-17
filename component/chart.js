@@ -1,5 +1,6 @@
 var canvas = document.getElementById('myChart').getContext('2d');
 
+var datapoints = [0, 20, 20, 60, 60, 120, NaN, 180, 120, 125, 105, 110, 170];
 // 繪製表格
 var myLineChart = new Chart(canvas, {
   type: 'line',
@@ -7,7 +8,7 @@ var myLineChart = new Chart(canvas, {
     datasets: [
       {
         label: '應收帳款收現天數',
-        data: [6, 6, 6, 6, 6, 6, 6, 6],
+        data: [5.7, 6.2, 6, 5.9, 6.2, 6, 6, 6],
         fill: false,
         pointBackgroundColor: 'rgba(45, 135, 252, 1)',
         borderColor: 'rgba(45, 135, 252, 1)',
@@ -15,7 +16,7 @@ var myLineChart = new Chart(canvas, {
       },
       {
         label: '銷貨天數',
-        data: [4, 3, 4, 5, 5, 6, 4, 3],
+        data: [4, 3, 4, 4.2, 4.8, 4, 4.5, 3],
         fill: false,
         pointBackgroundColor: 'rgba(255, 99, 132, 1)',
         borderColor: 'rgba(255, 99, 132, 1)',
@@ -23,7 +24,7 @@ var myLineChart = new Chart(canvas, {
       },
       {
         label: '應付帳款週轉天數',
-        data: [5, 6, 5, 5, 6, 5, 6, 5],
+        data: [5.5, 6, 5.3, 5.8, 6, 5.8, 6, 5.8],
         fill: false,
         pointBackgroundColor:'rgba(138, 44, 201, 1)',
         borderColor: 'rgba(138, 44, 201, 1)',
@@ -31,7 +32,7 @@ var myLineChart = new Chart(canvas, {
       },
       {
         label: '營運週轉天數',
-        data: [2, 1, 2, 2, 3, 2, 3, 1],
+        data: [2, 1, 2, 2.2, 2.8, 1.6, 2.2, 0.7],
         fill: false,
         pointBackgroundColor: 'rgba(255, 128, 43, 1)',
         borderColor: 'rgba(255, 128, 43, 1)',
@@ -39,7 +40,7 @@ var myLineChart = new Chart(canvas, {
       },
       {
         label: '現金週轉天數',
-        data: [5, 4, 5, 4, 5, 5, 6, 4],
+        data: [4.5, 3.5, 4.5, 4.5, 5, 4, 4.5, 3.5],
         fill: false,
         pointBackgroundColor: 'rgba(56, 201, 82, 1)',
         borderColor: 'rgba(56, 201, 82, 1)',
@@ -50,15 +51,17 @@ var myLineChart = new Chart(canvas, {
   options: {
     scales: {
       xAxes: [{
+        display: true,
           type: 'category',
           // 由左到右
           labels: ['19', '18', '17', '16', '15', '14', '13', '12'],
       }],
       yAxes: [{
+        display: true,
         type: 'category',
         // 由上到下
         labels: [0, 40, 80, 120, 160, 200, 240, 280, 320].reverse(),
-    }]
+      }]
     }
   }
 });
