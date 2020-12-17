@@ -68,7 +68,7 @@ function createBody(formTitleText) {
                 formTitle.style.paddingLeft = '20px';
             // 不確定 class name
             // formTitle.className = 'form_item_title';
-            formTitle.innerText = translate(item.column_name);
+            formTitle.innerText = (translate(item.column_name) === undefined) ? '' : translate(item.column_name);
 
             wrapper.append(formTitle);
             console.log(wrapper);
