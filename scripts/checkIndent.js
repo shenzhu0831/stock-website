@@ -3,13 +3,15 @@ let orderList = {};
 let isNeedIndent;
 
 (async function () {
-    await fetch('https://5fbd1e2b3f8f90001638cc76.mockapi.io/layer')
+    // await fetch('https://5fbd1e2b3f8f90001638cc76.mockapi.io/layer')
+    await fetch('../fake/layerArray.json')
         .then((result) => {
             if (result.ok) return result.json();
             else console.error('something wrong when fetch layer.');
         })
         .catch((error) => console.error(error))
         .then((data) => {
+            console.log(data)
             layerArray = data;
             isNeedIndent = function (keyString) {
                 console.log(orderList[keyString])
