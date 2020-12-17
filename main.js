@@ -1,5 +1,7 @@
 import getStockData from './scripts/search.js';
 import { createTitle, createBody } from './dynamicComponents/createSheet.js';
+import './scripts/checkIndent.js';
+import {reportYear2330} from './fake/data.js';
 
 const searchInput = document.getElementById('search-input');
 const searchInputIcon = document.getElementById('search-icon');
@@ -34,7 +36,7 @@ function createTable(titlText, topText, incomeData) {
     const container = document.createElement('div');
     const title = createTitle(titlText);
     const body = createBody(topText, incomeData);
-    body.setRowName(incomeData);
+    body.setRowName('balance_sheets');
     body.setCell(incomeData);
 
     container.append(title, body);
@@ -43,9 +45,9 @@ function createTable(titlText, topText, incomeData) {
 
 balanceSheetButton.addEventListener('click', function () {
     const balanceSheet = createTable(
-        'title test',
-        'test top',
-        reportYear.year_balance_sheets
+        '資產負債表',
+        '',
+        reportYear2330.year_balance_sheets
     );
     displayArea.textContent = '';
     displayArea.append(balanceSheet);
