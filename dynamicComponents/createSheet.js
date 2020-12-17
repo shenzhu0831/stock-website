@@ -1,4 +1,5 @@
 import translate from '../scripts/translate.js';
+import { layerArray, isNeedIndent } from '../scripts/checkIndent.js';
 
 function createTitle(h1Text) {
     let container, h1, subTitle, yearButton, quarterButton;
@@ -48,23 +49,33 @@ function createBody(formTitleText) {
 
     // fixme 這裡只是再次確認是 reportYear 是 array
 
-    dataArea.setRowName = function (incomeData) {
-        let dataArray = Array.from(incomeData);
-        let gridRows = 1;
-        Object.keys(dataArray[0]).forEach((key) => {
-            gridRows += 1;
-            const formTitle = document.createElement('div');
+    dataArea.setRowName = function (tableName) {
+        console.log(tableName);
+        let gridRows = 2;
 
-            // 如果 key 是 year, 表示是第一行
-            if (key === 'year') {
-                formTitle.innerHTML = `<p>期別</p><p>種類</p>`;
-            } else {
-                formTitle.innerText = translate(key);
-            }
+        const firstTitle = document.createElement('div');
+        firstTitle.innerHTML = `<p>期別</p><p>種類</p>`;
+        // 不確定 class name
+        // firstTitle.className = 'form_item_title';
+        wrapper.append(firstTitle);
+
+        layerArray.forEach((item) => {
+            if (item.table_name !== tableName) return;
+            gridRows += 1;
+
+            const formTitle = document.createElement('div');
+            if (isNeedIndent(item.column_name))
+                formTitle.style.paddingLeft = '20px';
+            // 不確定 class name
+            // formTitle.className = 'form_item_title';
+            formTitle.innerText = translate(item.column_name);
 
             wrapper.append(formTitle);
+            console.log(wrapper);
+            wrapper.style.gridTemplateRows = `repeat(${gridRows}, 1fr)`;
+            console.log(wrapper.style.gridTemplateRows);
         });
-        wrapper.style.gridTemplateRows = `repeat(${gridRows}, 1fr)`;
+        console.log(gridRows);
     };
 
     dataArea.setCell = function (incomeData) {
