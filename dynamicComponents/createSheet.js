@@ -1,5 +1,5 @@
 import translate from '../scripts/translate.js';
-import { layerArray, isNeedIndent } from '../scripts/checkIndent.js';
+import { isNeedIndent } from '../scripts/checkIndent.js';
 
 function createBody(formTitleText) {
     let dataArea, wrapper, formTitle;
@@ -18,39 +18,27 @@ function createBody(formTitleText) {
 
     wrapper.append(formTitle);
 
-    // fixme 這裡只是再次確認是 reportYear 是 array
-
-    dataArea.setRowName = function (tableName) {
-        console.log(tableName);
-        let gridRows = 2;
-
+    dataArea.setCell = function (incomeDataArray) {
         const firstTitle = document.createElement('div');
         firstTitle.innerHTML = `<p>期別</p><p>種類</p>`;
-        // 不確定 class name
-        // firstTitle.className = 'form_item_title';
         wrapper.append(firstTitle);
 
-        layerArray.forEach((item) => {
-            if (item.table_name !== tableName) return;
+        const incomeDataTitleArray = Object.keys(incomeDataArray[0]);
+
+        let gridRows = 2;
+        incomeDataTitleArray.forEach((keyString) => {
+            if (keyString === 'year') return;
             gridRows += 1;
 
             const formTitle = document.createElement('div');
-            if (isNeedIndent(item.column_name))
-                formTitle.style.paddingLeft = '20px';
-            // 不確定 class name
-            // formTitle.className = 'form_item_title';
-            formTitle.innerText = (translate(item.column_name) === undefined) ? '' : translate(item.column_name);
+            if (isNeedIndent(keyString)) formTitle.style.paddingLeft = '20px';
+            formTitle.innerText = translate(keyString) === undefined ? '' : translate(keyString);
 
             wrapper.append(formTitle);
-            console.log(wrapper);
             wrapper.style.gridTemplateRows = `repeat(${gridRows}, 1fr)`;
-            console.log(wrapper.style.gridTemplateRows);
         });
-        console.log(gridRows);
-    };
 
-    dataArea.setCell = function (incomeData) {
-        let dataArray = Array.from(incomeData);
+        let dataArray = Array.from(incomeDataArray);
         dataArray.forEach((obj) => {
             for (let key in obj) {
                 const formItem = document.createElement('div');
@@ -58,9 +46,11 @@ function createBody(formTitleText) {
                 if (key === 'year') {
                     formItem.innerHTML = `<p>${obj[key]}</p><p>合併</p>`;
                 } else {
-                    let isNegative = (obj[key] < 0)
+                    let isNegative = obj[key] < 0;
                     let numString = String(obj[key]);
-                    formItem.innerText = (isNegative) ? `(${numString.replace('-', '')})` : numString;
+                    formItem.innerText = isNegative
+                        ? `(${numString.replace('-', '')})`
+                        : numString;
                     if (isNegative) formItem.style.color = `red`;
                 }
                 wrapper.append(formItem);

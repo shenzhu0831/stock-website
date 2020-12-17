@@ -38,7 +38,6 @@ searchInputIcon.addEventListener('click', () => {
 balanceSheetButton.addEventListener('click', function () {
     displayTitle.textContent = '資產負債表';
     const tableBody = createBody('2330_台積電_資產負債表_年');
-    tableBody.setRowName('balance_sheets');
     tableBody.setCell(reportYear2330.year_balance_sheets);
 
     displayArea.textContent = '';
@@ -49,7 +48,6 @@ perShareRatiosButton.addEventListener('click', function () {
     displayTitle.textContent = '每股比例表';
 
     const tableBody = createBody('2330_台積電_資產負債表_年');
-    tableBody.setRowName('cash_flow_statements');
     tableBody.setCell(reportRatioYear2330.year_per_share_ratios);
 
     displayArea.textContent = '';
@@ -60,7 +58,6 @@ workingCapitalButton.addEventListener('click', function () {
     displayTitle.textContent = '營運資金週期';
 
     const tableBody = createBody('2330_台積電_營運資金週期_年');
-    tableBody.setRowName('liquidity_analysis');
     tableBody.setCell(chartAssetYear2330.workingCapital);
 
     displayArea.textContent = '';
