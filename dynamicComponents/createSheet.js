@@ -1,35 +1,6 @@
 import translate from '../scripts/translate.js';
 import { layerArray, isNeedIndent } from '../scripts/checkIndent.js';
 
-function createTitle(h1Text) {
-    let container, h1, subTitle, yearButton, quarterButton;
-
-    container = document.createElement('div');
-    container.className = 'data_title';
-
-    h1 = document.createElement('h1');
-    h1.innerText = h1Text;
-
-    subTitle = document.createElement('div');
-    subTitle.className = 'sub_title';
-
-    // input 改成 a 可能比較好
-    yearButton = document.createElement('input');
-    yearButton.className = 'year_form';
-    yearButton.type = 'button';
-    yearButton.value = '年表';
-
-    quarterButton = document.createElement('input');
-    quarterButton.className = 'quarter_form';
-    quarterButton.type = 'button';
-    quarterButton.value = '季表';
-
-    subTitle.append(yearButton, quarterButton);
-    container.append(h1, subTitle);
-
-    return container;
-}
-
 function createBody(formTitleText) {
     let dataArea, wrapper, formTitle;
     dataArea = document.createElement('div');
@@ -100,4 +71,4 @@ function createBody(formTitleText) {
     return dataArea;
 }
 
-export { createTitle, createBody };
+export { createBody };
