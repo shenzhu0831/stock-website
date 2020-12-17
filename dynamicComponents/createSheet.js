@@ -47,7 +47,9 @@ function createBody(formTitleText) {
                     formItem.innerHTML = `<p>${obj[key]}</p><p>合併</p>`;
                 } else {
                     let isNegative = obj[key] < 0;
-                    let numString = String(obj[key]);
+
+                    let numString = String(obj[key]).replace(/(-?\d+)(\d{3})/, "$1,$2");
+                    
                     formItem.innerText = isNegative
                         ? `(${numString.replace('-', '')})`
                         : numString;
