@@ -87,7 +87,10 @@ function createBody(formTitleText) {
                 if (key === 'year') {
                     formItem.innerHTML = `<p>${obj[key]}</p><p>合併</p>`;
                 } else {
-                    formItem.innerText = obj[key];
+                    let isNegative = (obj[key] < 0)
+                    let numString = String(obj[key]);
+                    formItem.innerText = (isNegative) ? `(${numString.replace('-', '')})` : numString;
+                    if (isNegative) formItem.style.color = `red`;
                 }
                 wrapper.append(formItem);
             }
