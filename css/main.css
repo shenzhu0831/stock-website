@@ -37,6 +37,9 @@ nav {
 nav h1 {
   text-align: center;
 }
+nav input::-webkit-calendar-picker-indicator {
+  display: none;
+}
 
 .card-header .mb-0 .btn {
   text-decoration: none;
@@ -54,7 +57,7 @@ nav h1 {
   padding: 25px;
   font-size: 16px;
   border: solid 3px;
-  border-radius: 100px;
+  border-radius: 10px;
   border-color: #c4c4c4;
 }
 .search_wrap {

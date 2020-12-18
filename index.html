@@ -19,7 +19,12 @@
                 <div class="menu">
                     <h1>股票網站</h1>
                     <div class="search_wrap">
-                        <input id="search-input" class="search" type="search" placeholder="請輸入股票代號" />
+                        <input id="search-input" list="stock_number" class="search" type="search"
+                            placeholder="請輸入股票代號" />
+                        <datalist id="stock_number">
+                            <option value="2330">
+                            <option value="3043">
+                        </datalist>
                         <div id="search-icon" class="search_img">
                             <img src="./images/loupe.svg" alt="">
                         </div>
