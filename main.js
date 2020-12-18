@@ -18,11 +18,12 @@ let chartAssetYear = localStorage.getItem('chartAssetYear') || undefined;
 let whichPage;
 
 function searchHandler() {
-    getStockData(searchInput.value)
+    let stockCode = searchInput.value;
+    getStockData(stockCode)
         .then((data) => {
             ({ reportYear, reportRatioYear, chartAssetYear } = data);
             reRender(whichPage);
-            localStorage.setItem('lastSearchedStockCode', searchInput.value);
+            localStorage.setItem('lastSearchedStockCode', stockCode);
         })
         .catch((error) => console.error(error));
     searchInput.value = '';
@@ -37,19 +38,19 @@ searchInputIcon.addEventListener('click', () => { searchHandler() });
 balanceSheetButton.addEventListener('click', function () {
     whichPage = 'balanceSheet';
     reRender(whichPage);
-    localStorage.setItem('whichpage', whichPage);
+    localStorage.setItem('whichPage', whichPage);
 });
 
 perShareRatiosButton.addEventListener('click', function () {
     whichPage = 'perShareRations';
     reRender(whichPage);
-    localStorage.setItem('whichpage', whichPage);
+    localStorage.setItem('whichPage', whichPage);
 });
 
 workingCapitalButton.addEventListener('click', function () {
     whichPage = 'workingCapital';
     reRender(whichPage);
-    localStorage.setItem('whichpage', whichPage);
+    localStorage.setItem('whichPage', whichPage);
 });
 
 // ====
