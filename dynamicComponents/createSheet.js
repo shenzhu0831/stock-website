@@ -36,7 +36,8 @@ function createTableBody(incomeDataArray) {
                 } else {
                     let isNegative = obj[key] < 0;
 
-                    let numString = String(obj[key]).replace(/(-?\d+)(\d{3})/, "$1,$2");
+                    let number = (Number.isInteger(obj[key])) ? Number(obj[key]) : Number.parseFloat(obj[key]).toFixed(1);
+                    let numString = number.toLocaleString();
                     
                     formItem.innerText = isNegative
                         ? `(${numString.replace('-', '')})`
