@@ -1,28 +1,30 @@
 @use "../theme/font";
 @use "../theme/color";
 nav {
-    margin-top: 75px;
+    margin: 30px;
     & h1 {
         text-align: center;
     }
 }
 .card-header .mb-0 .btn {
     text-decoration: none;
-    color: color.$black;
+    color: color.$blue-gray;
+    text-align: left;
     &:focus {
         box-shadow: none;
+        background-color: color.$dark-gray;
     }
 }
 .search {
     width: 282px;
     height: 55px;
-    margin: 30px 0;
     padding: 25px;
     font-size: font.$paragraph;
     border: solid 3px;
     border-radius: 100px;
     border-color: color.$dark-gray;
     &_wrap {
+        margin: 30px 0;
         position: relative;
     }
     &_img {
@@ -30,12 +32,12 @@ nav {
         width: 29px;
         height: 29px;
         right: 25px;
-        top: 42px;
+        top: 15px;
     }
 }
-.card:nth-child(odd) {
-    background-color: color.$light-gray;
-}
-.card:nth-child(even) {
-    background-color: color.$dark-gray;
-}
+// .card:nth-child(odd) {
+//     background-color: color.$lighter-blue;
+// }
+// .card:nth-child(even) {
+//     background-color: color.$dark-gray;
+// }

@@ -1,7 +1,7 @@
 @use "../theme/color";
 .data {
     width: 855px;
-    margin-top: 75px;
+    margin: 30px;
 }
 .data_title,
 .sub_title {
@@ -17,7 +17,8 @@
 .quarter_form {
     padding: 0;
     border: none;
-    background-color: white;
+    color: color.$blue;
+    background-color: color.$white_gray;
     &:focus {
         box-shadow: inset 0px -5px 0px 0px color.$dark-gray;
     }

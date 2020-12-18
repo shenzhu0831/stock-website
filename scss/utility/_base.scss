@@ -1,15 +1,25 @@
 @use "../theme/font";
+@use "../theme/color";
+body {
+    background-color: color.$light-blue;
+}
 .container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0;
     display: flex;
+    border-radius: 10px;
+    background-color: color.$white_gray;
 }
 .line {
-    border-right: 1px solid;
-    margin: 0 16px;
+    border-right: 3px solid;
+    color: color.$gray;
 }
 
 h1 {
-    font-size: font.$title;
     margin-bottom: 0;
+    color: color.$blue;
+    font-size: font.$title;
 }
 h2 {
     font-size: font.$subtitle;
