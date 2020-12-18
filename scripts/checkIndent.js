@@ -5,8 +5,7 @@ function isNeedIndent(keyString) {
 }
 
 (async function () {
-    // await fetch('https://5fbd1e2b3f8f90001638cc76.mockapi.io/layer')
-    await fetch('../fake/layerArray.json')
+    await fetch('https://5fbd1e2b3f8f90001638cc76.mockapi.io/layer')
         .then((result) => {
             if (result.ok) return result.json();
             else console.error('something wrong when fetch layer.');
