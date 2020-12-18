@@ -1,26 +1,13 @@
 import translate from '../scripts/translate.js';
 import { isNeedIndent } from '../scripts/checkIndent.js';
 
-function createTableBody(formTitleText) {
-    let dataArea, wrapper, formTitle;
-    dataArea = document.createElement('div');
-    dataArea.className = 'data_area';
-
-    wrapper = document.createElement('div');
+function createTableBody(incomeDataArray) {
+    let wrapper = document.createElement('div');
     wrapper.className = 'form_wrapper';
 
-    dataArea.append(wrapper);
-
-    // 先生成最上方的 form_title
-    formTitle = document.createElement('div');
-    formTitle.className = 'form_title';
-    formTitle.innerText = formTitleText;
-
-    wrapper.append(formTitle);
-
-    dataArea.setCell = function (incomeDataArray) {
         const firstTitle = document.createElement('div');
         firstTitle.innerHTML = `<p>期別</p><p>種類</p>`;
+        firstTitle.className = 'form_item_title';
         wrapper.append(firstTitle);
 
         const incomeDataTitleArray = Object.keys(incomeDataArray[0]);
@@ -33,6 +20,7 @@ function createTableBody(formTitleText) {
             const formTitle = document.createElement('div');
             if (isNeedIndent(keyString)) formTitle.style.paddingLeft = '20px';
             formTitle.innerText = translate(keyString) === undefined ? '' : translate(keyString);
+            formTitle.className = 'form_item_title';
 
             wrapper.append(formTitle);
             wrapper.style.gridTemplateRows = `repeat(${gridRows}, 1fr)`;
@@ -59,8 +47,7 @@ function createTableBody(formTitleText) {
             }
         });
         wrapper.style.gridTemplateColumns = `3fr repeat(${dataArray.length}, 1fr)`;
-    };
-    return dataArea;
+    return wrapper;
 }
 
 export { createTableBody };
