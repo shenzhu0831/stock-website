@@ -29,14 +29,10 @@ function searchHandler() {
 }
 
 searchInput.addEventListener('keydown', function (event) {
-    if (event.code === 'Enter') {
-        searchHandler();
-    }
+    if (event.code === 'Enter') { searchHandler() }
 });
 
-searchInputIcon.addEventListener('click', () => {
-    searchHandler();
-});
+searchInputIcon.addEventListener('click', () => { searchHandler() });
 
 balanceSheetButton.addEventListener('click', function () {
     whichPage = 'balanceSheet';
