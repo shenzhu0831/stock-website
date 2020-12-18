@@ -82,8 +82,9 @@ function reRender(whichPage) {
 }
 
 window.addEventListener('load', () => {
+    const lastSearchedStockCode = localStorage.getItem('lastSearchedStockCode') || '2330';
     whichPage = localStorage.getItem('whichPage') || 'balanceSheet';
-    getStockData('2330')
+    getStockData(lastSearchedStockCode)
         .then((data) => {
             ({ reportYear, reportRatioYear, chartAssetYear } = data);
             reRender(whichPage);
