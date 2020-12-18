@@ -15,26 +15,25 @@ let reportRatioYear = localStorage.getItem('reportRatioYear') || undefined;
 let chartAssetYear = localStorage.getItem('chartAssetYear') || undefined;
 let whichPage;
 
+function searchHandler() {
+    getStockData(searchInput.value)
+        .then((data) => {
+            ({ reportYear, reportRatioYear, chartAssetYear } = data);
+            reRender(whichPage);
+            localStorage.setItem('lastSearchedStockCode', searchInput.value);
+        })
+        .catch((error) => console.error(error));
+    searchInput.value = '';
+}
+
 searchInput.addEventListener('keydown', function (event) {
     if (event.code === 'Enter') {
-        getStockData(this.value)
-            .then((data) => {
-                ({ reportYear, reportRatioYear, chartAssetYear } = data);
-                reRender(whichPage);
-            })
-            .catch((error) => console.error(error));
-        this.value = '';
+        searchHandler();
     }
 });
 
 searchInputIcon.addEventListener('click', () => {
-    getStockData(this.value)
-        .then((data) => {
-            ({ reportYear, reportRatioYear, chartAssetYear } = data);
-            reRender(whichPage);
-        })
-        .catch((error) => console.error(error));
-    searchInput.value = '';
+    searchHandler();
 });
 
 balanceSheetButton.addEventListener('click', function () {
@@ -64,7 +63,7 @@ function reRender(whichPage) {
             displayTitle.textContent = '資產負債表';
             tableBody = createTableBody('2330_台積電_資產負債表_年');
             tableBody.setCell(reportYear.year_balance_sheets);
-            
+
             break;
         case 'perShareRations':
             displayTitle.textContent = '每股比例表';
@@ -78,7 +77,7 @@ function reRender(whichPage) {
             tableBody.setCell(chartAssetYear.workingCapital);
             break;
         default:
-            throw 'can not match any page'
+            throw 'can not match any page';
     }
     displayArea.textContent = '';
     displayArea.append(tableBody);
@@ -89,7 +88,7 @@ window.addEventListener('load', () => {
     getStockData('2330')
         .then((data) => {
             ({ reportYear, reportRatioYear, chartAssetYear } = data);
-            reRender(whichPage)
+            reRender(whichPage);
         })
         .catch((error) => console.error(error));
-})
+});
