@@ -12,7 +12,7 @@ function createTableBody(incomeDataArray) {
 
         const incomeDataTitleArray = Object.keys(incomeDataArray[0]);
 
-        let gridRows = 2;
+        let gridRows = 1;
         incomeDataTitleArray.forEach((keyString) => {
             if (keyString === 'year') return;
             gridRows += 1;
