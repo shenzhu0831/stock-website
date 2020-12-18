@@ -14,6 +14,7 @@ const displayArea = document.querySelector('div[class="data_area"]');
 let reportYear;
 let reportRatioYear;
 let chartAssetYear;
+let whichPage;
 
 searchInput.addEventListener('keydown', function (event) {
     if (event.code === 'Enter') {
@@ -36,30 +37,66 @@ searchInputIcon.addEventListener('click', () => {
 });
 
 balanceSheetButton.addEventListener('click', function () {
-    displayTitle.textContent = '資產負債表';
-    const tableBody = createBody('2330_台積電_資產負債表_年');
-    tableBody.setCell(reportYear2330.year_balance_sheets);
-
-    displayArea.textContent = '';
-    displayArea.append(tableBody);
+    whichPage = 'balanceSheet';
+    reRender(whichPage);
+    localStorage.setItem('whichpage', whichPage);
 });
 
 perShareRatiosButton.addEventListener('click', function () {
-    displayTitle.textContent = '每股比例表';
-
-    const tableBody = createBody('2330_台積電_資產負債表_年');
-    tableBody.setCell(reportRatioYear2330.year_per_share_ratios);
-
-    displayArea.textContent = '';
-    displayArea.append(tableBody);
+    whichPage = 'perShareRations';
+    reRender(whichPage);
+    localStorage.setItem('whichpage', whichPage);
 });
 
 workingCapitalButton.addEventListener('click', function () {
-    displayTitle.textContent = '營運資金週期';
+    whichPage = 'workingCapital';
+    reRender(whichPage);
+    localStorage.setItem('whichpage', whichPage);
+});
 
-    const tableBody = createBody('2330_台積電_營運資金週期_年');
-    tableBody.setCell(chartAssetYear2330.workingCapital);
+// ====
 
+function reRender(whichPage) {
+    let tableBody;
+    switch (whichPage) {
+        case 'balanceSheet':
+            displayTitle.textContent = '資產負債表';
+            tableBody = createBody('2330_台積電_資產負債表_年');
+            tableBody.setCell(reportYear2330.year_balance_sheets);
+            
+            break;
+        case 'perShareRations':
+            displayTitle.textContent = '每股比例表';
+            tableBody = createBody('2330_台積電_資產負債表_年');
+            tableBody.setCell(reportRatioYear2330.year_per_share_ratios);
+            break;
+        case 'workingCapital':
+            displayTitle.textContent = '營運資金週期';
+
+            tableBody = createBody('2330_台積電_營運資金週期_年');
+            tableBody.setCell(chartAssetYear2330.workingCapital);
+            break;
+        default:
+            throw 'can not match any page'
+    }
     displayArea.textContent = '';
     displayArea.append(tableBody);
-});
+}
+
+window.addEventListener('load', () => {
+    // 做的時候才想到 把這些資訊存下來並且在"下次打開網站渲染同樣的資料"，這點有點不合邏輯
+    // reportYear = JSON.parse(localStorage.getItem('reportYear'));
+    // reportRatioYear = JSON.parse(localStorage.getItem('reportRatioYear'));
+    // chartAssetYear = JSON.parse(localStorage.getItem('chartAssetYear'));
+
+    let recodedPage = localStorage.getItem('whichPage');
+    if (recodedPage) reRender(recodedPage);
+    else {
+        getStockData('2330')
+            .then((data) => {
+                ({ reportYear, reportRatioYear, chartAssetYear } = data);
+            })
+            .catch((error) => console.error(error));
+        reRender('balanceSheet')
+    }
+})

@@ -34,6 +34,7 @@ async function getStockData(stockCodeString) {
             .catch(error => console.error(error))
             .then((data) => {
                 stockDataSet[iterator] = data;
+                localStorage.setItem(iterator, JSON.stringify(data));
             });
     }
     return stockDataSet;
