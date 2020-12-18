@@ -63,22 +63,20 @@ function reRender(whichPage) {
     switch (whichPage) {
         case 'balanceSheet':
             displayTitle.textContent = '資產負債表';
-            formTitle.textContent = '2330_台積電_資產負債表_年';
             tableBody = createTableBody(reportYear.year_balance_sheets);
             break;
         case 'perShareRations':
             displayTitle.textContent = '每股比例表';
-            formTitle.textContent = '2330_台積電_每股比例表_年';
             tableBody = createTableBody(reportRatioYear.year_per_share_ratios);
             break;
         case 'workingCapital':
             displayTitle.textContent = '營運資金週期';
-            formTitle.textContent = '2330_台積電_營運資金週期_年';
             tableBody = createTableBody(chartAssetYear.workingCapital);
             break;
         default:
             throw 'can not match any page';
     }
+    formTitle.textContent = `${reportYear.stock_symbol}_${reportYear.company_name}_${displayTitle.textContent}_年`;
     formContainer.textContent = '';
     formContainer.append(tableBody);
 }
