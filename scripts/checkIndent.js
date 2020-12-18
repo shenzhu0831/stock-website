@@ -1,6 +1,8 @@
 let layerArray;
 let orderList = {};
-let isNeedIndent;
+function isNeedIndent(keyString) {
+    return (orderList[keyString] === 1) ? false : true;
+}
 
 (async function () {
     // await fetch('https://5fbd1e2b3f8f90001638cc76.mockapi.io/layer')
@@ -13,15 +15,10 @@ let isNeedIndent;
         .then((data) => {
             console.log(data)
             layerArray = data;
-            isNeedIndent = function (keyString) {
-                console.log(orderList[keyString])
-                return (orderList[keyString] === 1) ? false : true;
-            }
         });
     layerArray.forEach(element => {
         orderList[element.column_name] = element.order;
     });
-    
 })();
 
 export { layerArray, orderList, isNeedIndent }
