@@ -1,7 +1,7 @@
 let layerArray;
 let orderList = {};
 function isNeedIndent(keyString) {
-    return (orderList[keyString] === 1) ? false : true;
+    return (orderList[keyString] === 2) ? true : false;
 }
 
 (async function () {
