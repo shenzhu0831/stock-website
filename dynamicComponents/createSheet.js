@@ -1,7 +1,7 @@
 import translate from '../scripts/translate.js';
 import { isNeedIndent } from '../scripts/checkIndent.js';
 
-function createBody(formTitleText) {
+function createTableBody(formTitleText) {
     let dataArea, wrapper, formTitle;
     dataArea = document.createElement('div');
     dataArea.className = 'data_area';
@@ -63,4 +63,4 @@ function createBody(formTitleText) {
     return dataArea;
 }
 
-export { createBody };
+export { createTableBody };
