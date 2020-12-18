@@ -1,0 +1,125 @@
+{
+    "closing_price": 492,
+    "company_name": "台積電",
+    "go_public": 1,
+    "id": 1039,
+    "industry_category": "半導體業",
+    "level": "A",
+    "stock_symbol": "2330",
+    "year_operating_performances": [
+        {
+            "year": 2019,
+            "days_of_cash_receivable": 47.7,
+            "days_of_sales": 52.5,
+            "days_of_accounts_payable_turnover": 88.4,
+            "days_of_operation_turnover": 100.2,
+            "days_of_cash_turnover": 11.8
+        },
+        {
+            "year": 2018,
+            "days_of_cash_receivable": 45.7,
+            "days_of_sales": 70.6,
+            "days_of_accounts_payable_turnover": 88.4,
+            "days_of_operation_turnover": 116.3,
+            "days_of_cash_turnover": 27.9
+        },
+        {
+            "year": 2017,
+            "days_of_cash_receivable": 45.7,
+            "days_of_sales": 55.9,
+            "days_of_accounts_payable_turnover": 92.5,
+            "days_of_operation_turnover": 101.6,
+            "days_of_cash_turnover": 9.1
+        },
+        {
+            "year": 2016,
+            "days_of_cash_receivable": 49.8,
+            "days_of_sales": 37.6,
+            "days_of_accounts_payable_turnover": 99.8,
+            "days_of_operation_turnover": 87.4,
+            "days_of_cash_turnover": -12.4
+        },
+        {
+            "year": 2015,
+            "days_of_cash_receivable": 37,
+            "days_of_sales": 56.5,
+            "days_of_accounts_payable_turnover": 72.1,
+            "days_of_operation_turnover": 93.5,
+            "days_of_cash_turnover": 21.4
+        },
+        {
+            "year": 2014,
+            "days_of_cash_receivable": 55.1,
+            "days_of_sales": 62.9,
+            "days_of_accounts_payable_turnover": 109,
+            "days_of_operation_turnover": 118,
+            "days_of_cash_turnover": 9
+        },
+        {
+            "year": 2013,
+            "days_of_cash_receivable": 44,
+            "days_of_sales": 43.3,
+            "days_of_accounts_payable_turnover": 83.1,
+            "days_of_operation_turnover": 87.3,
+            "days_of_cash_turnover": 4.2
+        },
+        {
+            "year": 2012,
+            "days_of_cash_receivable": 41.9,
+            "days_of_sales": 52.6,
+            "days_of_accounts_payable_turnover": 80.8,
+            "days_of_operation_turnover": 94.5,
+            "days_of_cash_turnover": 13.7
+        }
+    ],
+    "year_per_share_ratios": [
+        {
+            "year": 2019,
+            "EBIDTA_per_share": 26.2,
+            "cash_reinvestment_ratio": 0.677,
+            "dividend_redistribution_ratio": 0.381
+        },
+        {
+            "year": 2018,
+            "EBIDTA_per_share": 26.7,
+            "cash_reinvestment_ratio": 0.455,
+            "dividend_redistribution_ratio": 0.299
+        },
+        {
+            "year": 2017,
+            "EBIDTA_per_share": 25.4,
+            "cash_reinvestment_ratio": 0.501,
+            "dividend_redistribution_ratio": 0.275
+        },
+        {
+            "year": 2016,
+            "EBIDTA_per_share": 23.6,
+            "cash_reinvestment_ratio": 0.535,
+            "dividend_redistribution_ratio": 0.254
+        },
+        {
+            "year": 2015,
+            "EBIDTA_per_share": 22.2,
+            "cash_reinvestment_ratio": 0.447,
+            "dividend_redistribution_ratio": 0.203
+        },
+        {
+            "year": 2014,
+            "EBIDTA_per_share": 19.5,
+            "cash_reinvestment_ratio": 0.571,
+            "dividend_redistribution_ratio": 0.154
+        },
+        {
+            "year": 2013,
+            "EBIDTA_per_share": 14.4,
+            "cash_reinvestment_ratio": 0.768,
+            "dividend_redistribution_ratio": 0.208
+        },
+        {
+            "year": 2012,
+            "EBIDTA_per_share": 12.1,
+            "cash_reinvestment_ratio": 0.784,
+            "dividend_redistribution_ratio": 0.248
+        }
+    ]
+}

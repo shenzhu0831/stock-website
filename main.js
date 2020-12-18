@@ -1,7 +1,6 @@
 import getStockData from './scripts/search.js';
 import { createBody } from './dynamicComponents/createSheet.js';
 import './scripts/checkIndent.js';
-import {reportYear2330, reportRatioYear2330, chartAssetYear2330} from './fake/data.js';
 
 const searchInput = document.getElementById('search-input');
 const searchInputIcon = document.getElementById('search-icon');
@@ -11,9 +10,9 @@ const workingCapitalButton = document.getElementById('workingCapital');
 const displayTitle = document.querySelector('div.data_title>h1');
 const displayArea = document.querySelector('div[class="data_area"]');
 
-let reportYear;
-let reportRatioYear;
-let chartAssetYear;
+let reportYear = localStorage.getItem('reportYear') || undefined;
+let reportRatioYear = localStorage.getItem('reportRatioYear') || undefined;
+let chartAssetYear = localStorage.getItem('chartAssetYear') || undefined;
 let whichPage;
 
 searchInput.addEventListener('keydown', function (event) {
@@ -64,19 +63,19 @@ function reRender(whichPage) {
         case 'balanceSheet':
             displayTitle.textContent = '資產負債表';
             tableBody = createBody('2330_台積電_資產負債表_年');
-            tableBody.setCell(reportYear2330.year_balance_sheets);
+            tableBody.setCell(reportYear.year_balance_sheets);
             
             break;
         case 'perShareRations':
             displayTitle.textContent = '每股比例表';
             tableBody = createBody('2330_台積電_資產負債表_年');
-            tableBody.setCell(reportRatioYear2330.year_per_share_ratios);
+            tableBody.setCell(reportRatioYear.year_per_share_ratios);
             break;
         case 'workingCapital':
             displayTitle.textContent = '營運資金週期';
 
             tableBody = createBody('2330_台積電_營運資金週期_年');
-            tableBody.setCell(chartAssetYear2330.workingCapital);
+            tableBody.setCell(chartAssetYear.workingCapital);
             break;
         default:
             throw 'can not match any page'
@@ -87,13 +86,10 @@ function reRender(whichPage) {
 
 window.addEventListener('load', () => {
     whichPage = localStorage.getItem('whichPage') || 'balanceSheet';
-    if (whichPage) reRender(whichPage);
-    else {
-        getStockData('2330')
-            .then((data) => {
-                ({ reportYear, reportRatioYear, chartAssetYear } = data);
-            })
-            .catch((error) => console.error(error));
-        reRender('balanceSheet')
-    }
+    getStockData('2330')
+        .then((data) => {
+            ({ reportYear, reportRatioYear, chartAssetYear } = data);
+            reRender(whichPage)
+        })
+        .catch((error) => console.error(error));
 })

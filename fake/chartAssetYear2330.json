@@ -1,0 +1,146 @@
+{
+    "closing_price": 492,
+    "company_name": "台積電",
+    "level": "A",
+    "stock_symbol": "2330",
+    "liquidity": [
+        {
+            "year": 2012,
+            "cash_and_cash_equivalents": 143411,
+            "short_term_debt": 34715,
+            "long_term_liabilities_due_within_one_year": 128,
+            "corporate_bond": 80000,
+            "bank_loan_non_current": 1359,
+            "EBIDTA": 314046
+        },
+        {
+            "year": 2013,
+            "cash_and_cash_equivalents": 242695,
+            "short_term_debt": 15645,
+            "long_term_liabilities_due_within_one_year": 0,
+            "corporate_bond": 210768,
+            "bank_loan_non_current": 40,
+            "EBIDTA": 374316
+        },
+        {
+            "year": 2014,
+            "cash_and_cash_equivalents": 358449,
+            "short_term_debt": 36159,
+            "long_term_liabilities_due_within_one_year": 0,
+            "corporate_bond": 213674,
+            "bank_loan_non_current": 842,
+            "EBIDTA": 505566
+        },
+        {
+            "year": 2015,
+            "cash_and_cash_equivalents": 562689,
+            "short_term_debt": 39474,
+            "long_term_liabilities_due_within_one_year": 23518,
+            "corporate_bond": 191965,
+            "bank_loan_non_current": 33,
+            "EBIDTA": 576125
+        },
+        {
+            "year": 2016,
+            "cash_and_cash_equivalents": 541254,
+            "short_term_debt": 57958,
+            "long_term_liabilities_due_within_one_year": 38110,
+            "corporate_bond": 153094,
+            "bank_loan_non_current": 22,
+            "EBIDTA": 613094
+        },
+        {
+            "year": 2017,
+            "cash_and_cash_equivalents": 553392,
+            "short_term_debt": 63767,
+            "long_term_liabilities_due_within_one_year": 58401,
+            "corporate_bond": 91800,
+            "bank_loan_non_current": 0,
+            "EBIDTA": 659606
+        },
+        {
+            "year": 2018,
+            "cash_and_cash_equivalents": 577815,
+            "short_term_debt": 88755,
+            "long_term_liabilities_due_within_one_year": 34900,
+            "corporate_bond": 56900,
+            "bank_loan_non_current": 0,
+            "EBIDTA": 693108
+        },
+        {
+            "year": 2019,
+            "cash_and_cash_equivalents": 455399,
+            "short_term_debt": 118522,
+            "long_term_liabilities_due_within_one_year": 31800,
+            "corporate_bond": 25100,
+            "bank_loan_non_current": 0,
+            "EBIDTA": 679980
+        }
+    ],
+    "workingCapital": [
+        {
+            "year": 2012,
+            "days_of_cash_receivable": 41.9,
+            "days_of_sales": 52.6,
+            "days_of_accounts_payable_turnover": 80.8,
+            "days_of_operation_turnover": 94.5,
+            "days_of_cash_turnover": 13.7
+        },
+        {
+            "year": 2013,
+            "days_of_cash_receivable": 44,
+            "days_of_sales": 43.3,
+            "days_of_accounts_payable_turnover": 83.1,
+            "days_of_operation_turnover": 87.3,
+            "days_of_cash_turnover": 4.2
+        },
+        {
+            "year": 2014,
+            "days_of_cash_receivable": 55.1,
+            "days_of_sales": 62.9,
+            "days_of_accounts_payable_turnover": 109,
+            "days_of_operation_turnover": 118,
+            "days_of_cash_turnover": 9
+        },
+        {
+            "year": 2015,
+            "days_of_cash_receivable": 37,
+            "days_of_sales": 56.5,
+            "days_of_accounts_payable_turnover": 72.1,
+            "days_of_operation_turnover": 93.5,
+            "days_of_cash_turnover": 21.4
+        },
+        {
+            "year": 2016,
+            "days_of_cash_receivable": 49.8,
+            "days_of_sales": 37.6,
+            "days_of_accounts_payable_turnover": 99.8,
+            "days_of_operation_turnover": 87.4,
+            "days_of_cash_turnover": -12.4
+        },
+        {
+            "year": 2017,
+            "days_of_cash_receivable": 45.7,
+            "days_of_sales": 55.9,
+            "days_of_accounts_payable_turnover": 92.5,
+            "days_of_operation_turnover": 101.6,
+            "days_of_cash_turnover": 9.1
+        },
+        {
+            "year": 2018,
+            "days_of_cash_receivable": 45.7,
+            "days_of_sales": 70.6,
+            "days_of_accounts_payable_turnover": 88.4,
+            "days_of_operation_turnover": 116.3,
+            "days_of_cash_turnover": 27.9
+        },
+        {
+            "year": 2019,
+            "days_of_cash_receivable": 47.7,
+            "days_of_sales": 52.5,
+            "days_of_accounts_payable_turnover": 88.4,
+            "days_of_operation_turnover": 100.2,
+            "days_of_cash_turnover": 11.8
+        }
+    ]
+}

@@ -7,11 +7,13 @@ async function getStockData(stockCodeString) {
 
     switch (String(stockCodeString)) {
         case '2330':
-            mockApiPrefix = 'https://5fbd1e2b3f8f90001638cc76.mockapi.io/';
+            // mockApiPrefix = 'https://5fbd1e2b3f8f90001638cc76.mockapi.io/';
+            mockApiPrefix = 'fake/';
             break;
 
         case '3043':
-            mockApiPrefix = 'https://5fbf2d965923c90016e6ba2d.mockapi.io/';
+            // mockApiPrefix = 'https://5fbf2d965923c90016e6ba2d.mockapi.io/';
+            mockApiPrefix = 'fake/';
             break;
 
         default:
@@ -22,7 +24,8 @@ async function getStockData(stockCodeString) {
 
     let stockDataSet = {};
     for (const iterator of apiList) {
-        const url = mockApiPrefix + iterator + stockCodeString;
+        // const url = mockApiPrefix + iterator + stockCodeString;
+        const url = mockApiPrefix + iterator + stockCodeString + '.json';
         await fetch(url)
             .then((result) => {
                 if (result.ok) return result.json();

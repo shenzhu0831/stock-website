@@ -1,0 +1,125 @@
+{
+    "closing_price": 6,
+    "company_name": "科風",
+    "go_public": 1,
+    "id": 1277,
+    "industry_category": "其他電子業",
+    "level": "D",
+    "stock_symbol": "3043",
+    "year_operating_performances": [
+        {
+            "year": 2019,
+            "days_of_cash_receivable": 80.6,
+            "days_of_sales": 156.7,
+            "days_of_accounts_payable_turnover": 103.6,
+            "days_of_operation_turnover": 237.3,
+            "days_of_cash_turnover": 133.7
+        },
+        {
+            "year": 2018,
+            "days_of_cash_receivable": 73.3,
+            "days_of_sales": 198.7,
+            "days_of_accounts_payable_turnover": 95.3,
+            "days_of_operation_turnover": 272,
+            "days_of_cash_turnover": 176.7
+        },
+        {
+            "year": 2017,
+            "days_of_cash_receivable": 77.8,
+            "days_of_sales": 160.7,
+            "days_of_accounts_payable_turnover": 102.4,
+            "days_of_operation_turnover": 238.5,
+            "days_of_cash_turnover": 136.1
+        },
+        {
+            "year": 2016,
+            "days_of_cash_receivable": 80.1,
+            "days_of_sales": 149.9,
+            "days_of_accounts_payable_turnover": 93.3,
+            "days_of_operation_turnover": 230,
+            "days_of_cash_turnover": 136.7
+        },
+        {
+            "year": 2015,
+            "days_of_cash_receivable": 74.6,
+            "days_of_sales": 134.7,
+            "days_of_accounts_payable_turnover": 80.4,
+            "days_of_operation_turnover": 209.3,
+            "days_of_cash_turnover": 128.9
+        },
+        {
+            "year": 2014,
+            "days_of_cash_receivable": 78.3,
+            "days_of_sales": 172.8,
+            "days_of_accounts_payable_turnover": 83.9,
+            "days_of_operation_turnover": 251.1,
+            "days_of_cash_turnover": 167.2
+        },
+        {
+            "year": 2013,
+            "days_of_cash_receivable": 79.8,
+            "days_of_sales": 143.4,
+            "days_of_accounts_payable_turnover": 79.4,
+            "days_of_operation_turnover": 223.2,
+            "days_of_cash_turnover": 143.8
+        },
+        {
+            "year": 2012,
+            "days_of_cash_receivable": 87,
+            "days_of_sales": 207.1,
+            "days_of_accounts_payable_turnover": 92.7,
+            "days_of_operation_turnover": 294.1,
+            "days_of_cash_turnover": 201.4
+        }
+    ],
+    "year_per_share_ratios": [
+        {
+            "year": 2019,
+            "EBIDTA_per_share": 0.5,
+            "cash_reinvestment_ratio": 0.038,
+            "dividend_redistribution_ratio": 0
+        },
+        {
+            "year": 2018,
+            "EBIDTA_per_share": 0.1,
+            "cash_reinvestment_ratio": 0.138,
+            "dividend_redistribution_ratio": 0
+        },
+        {
+            "year": 2017,
+            "EBIDTA_per_share": 0,
+            "cash_reinvestment_ratio": -0.22199999999999998,
+            "dividend_redistribution_ratio": 0
+        },
+        {
+            "year": 2016,
+            "EBIDTA_per_share": -0.09999999999999998,
+            "cash_reinvestment_ratio": -0.03700000000000003,
+            "dividend_redistribution_ratio": 0
+        },
+        {
+            "year": 2015,
+            "EBIDTA_per_share": 0,
+            "cash_reinvestment_ratio": -2,
+            "dividend_redistribution_ratio": 0
+        },
+        {
+            "year": 2014,
+            "EBIDTA_per_share": -0.5,
+            "cash_reinvestment_ratio": -0.09699999999999998,
+            "dividend_redistribution_ratio": 0
+        },
+        {
+            "year": 2013,
+            "EBIDTA_per_share": -2,
+            "cash_reinvestment_ratio": -0.018000000000000016,
+            "dividend_redistribution_ratio": 0
+        },
+        {
+            "year": 2012,
+            "EBIDTA_per_share": -5.2,
+            "cash_reinvestment_ratio": -0.010000000000000009,
+            "dividend_redistribution_ratio": 0
+        }
+    ]
+}
