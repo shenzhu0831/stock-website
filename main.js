@@ -21,6 +21,7 @@ searchInput.addEventListener('keydown', function (event) {
         getStockData(this.value)
             .then((data) => {
                 ({ reportYear, reportRatioYear, chartAssetYear } = data);
+                reRender(whichPage);
             })
             .catch((error) => console.error(error));
         this.value = '';
@@ -31,6 +32,7 @@ searchInputIcon.addEventListener('click', () => {
     getStockData(this.value)
         .then((data) => {
             ({ reportYear, reportRatioYear, chartAssetYear } = data);
+            reRender(whichPage);
         })
         .catch((error) => console.error(error));
     searchInput.value = '';
@@ -84,8 +86,8 @@ function reRender(whichPage) {
 }
 
 window.addEventListener('load', () => {
-    let recodedPage = localStorage.getItem('whichPage');
-    if (recodedPage) reRender(recodedPage);
+    whichPage = localStorage.getItem('whichPage') || 'balanceSheet';
+    if (whichPage) reRender(whichPage);
     else {
         getStockData('2330')
             .then((data) => {
