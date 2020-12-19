@@ -11,6 +11,8 @@ const displayTitle = document.querySelector('div.data_title>h1');
 const displayArea = document.querySelector('div[class="data_area"]');
 const formTitle = displayArea.querySelector('div.form_title');
 const formContainer = displayArea.querySelector('div.form_container');
+const loadingBlock = document.getElementById('loading-animation');
+const loadingAnimation = loadingBlock.querySelector('div');
 
 let reportYear = localStorage.getItem('reportYear') || undefined;
 let reportRatioYear = localStorage.getItem('reportRatioYear') || undefined;
@@ -19,10 +21,14 @@ let whichPage;
 
 function searchHandler() {
     let stockCode = searchInput.value;
+    loadingBlock.hidden = false;
+    loadingAnimation.className = 'lds-hourglass';
     getStockData(stockCode)
         .then((data) => {
             ({ reportYear, reportRatioYear, chartAssetYear } = data);
             reRender(whichPage);
+            loadingBlock.hidden = true;
+            loadingAnimation.className = '';
             localStorage.setItem('lastSearchedStockCode', stockCode);
         })
         .catch((error) => console.error(error));
@@ -85,6 +91,8 @@ window.addEventListener('load', () => {
         .then((data) => {
             ({ reportYear, reportRatioYear, chartAssetYear } = data);
             reRender(whichPage);
+            loadingBlock.hidden = true;
+            loadingAnimation.className = '';
         })
         .catch((error) => console.error(error));
 });
