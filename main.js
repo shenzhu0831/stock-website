@@ -1,4 +1,4 @@
-import getStockData from './scripts/search.js';
+import { getStockData, findMatches } from './scripts/search.js';
 import { createTableBody } from './dynamicComponents/createSheet.js';
 import './scripts/checkIndent.js';
 
@@ -11,14 +11,15 @@ const displayTitle = document.querySelector('div.data_title>h1');
 const displayArea = document.querySelector('div[class="data_area"]');
 const formTitle = displayArea.querySelector('div.form_title');
 const formContainer = displayArea.querySelector('div.form_container');
+const preMatch = document.querySelector('div.pre-match');
 
 let reportYear = localStorage.getItem('reportYear') || undefined;
 let reportRatioYear = localStorage.getItem('reportRatioYear') || undefined;
 let chartAssetYear = localStorage.getItem('chartAssetYear') || undefined;
 let whichPage;
 
-function searchHandler() {
-    let stockCode = searchInput.value;
+function searchHandler(inputValue) {
+    let stockCode = inputValue;
     getStockData(stockCode)
         .then((data) => {
             ({ reportYear, reportRatioYear, chartAssetYear } = data);
@@ -27,13 +28,41 @@ function searchHandler() {
         })
         .catch((error) => console.error(error));
     searchInput.value = '';
+    preMatch.textContent = '';
 }
 
-searchInput.addEventListener('keydown', function (event) {
-    if (event.code === 'Enter') { searchHandler() }
+searchInput.addEventListener('input', function () {
+    preMatch.textContent = '';
+    if (this.value === '') return;
+    const preMatchArray = findMatches(this.value);
+    preMatchArray.forEach(item => {
+        const itemElement = document.createElement('a');
+        itemElement.tabIndex = 0;
+        itemElement.dataset.code = item;
+        itemElement.className = 'pre-match-item';
+        itemElement.innerText = item;
+        itemElement.addEventListener('keydown', function (event) {
+            event.preventDefault();
+            if (event.code === 'ArrowDown' && this.nextElementSibling) this.nextElementSibling.focus();
+            if (event.code === 'ArrowUp' && this.previousElementSibling) this.previousElementSibling.focus();
+            if (event.code === 'Enter') searchHandler(this.dataset.code);
+        })
+        itemElement.addEventListener('click', function () {
+            searchHandler(this.dataset.code)
+        });
+        preMatch.append(itemElement);
+    })
 });
 
-searchInputIcon.addEventListener('click', () => { searchHandler() });
+searchInput.addEventListener('keydown', function (event) {
+    if (event.code === 'Enter') { searchHandler(this.value) };
+    if (event.code === 'ArrowDown' && preMatch.firstChild) {
+        event.preventDefault();
+        preMatch.firstChild.focus();
+    }
+});
+
+searchInputIcon.addEventListener('click', () => { searchHandler(searchInput.value) });
 
 balanceSheetButton.addEventListener('click', function () {
     whichPage = 'balanceSheet';
