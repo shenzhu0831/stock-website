@@ -1,7 +1,7 @@
 @use "../theme/color";
 .data {
-    width: 855px;
     margin: 30px;
+    flex: 3;
     &_area {
         margin-top: 27px;
     }
@@ -31,10 +31,16 @@
     color: color.$white;
     background-color: color.$dark-blue;
 }
+.form_container {
+    width: 750px;
+    overflow-y: auto;
+    white-space: nowrap;
+}
 table {
     width: 100%;
     margin: 0 auto;
     line-height: 26px;
+
     th {
         padding: 0 10px;
     }
@@ -46,9 +52,7 @@ table {
     }
     td {
         text-align: right;
-        &:last-child {
-            padding-right: 10px;
-        }
+        padding: 0 10px;
     }
 }
 

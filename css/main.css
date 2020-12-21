@@ -2,10 +2,8 @@ body {
   background-color: #c4d6f4;
 }
 
-.container {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  padding: 0;
+.wrapper {
+  margin: 60px;
   display: flex;
   border-radius: 10px;
   background-color: #ffffff;
@@ -33,6 +31,7 @@ input:focus {
 
 nav {
   margin: 30px;
+  flex: 1;
 }
 nav h1 {
   text-align: center;
@@ -73,8 +72,8 @@ nav input::-webkit-calendar-picker-indicator {
 }
 
 .data {
-  width: 855px;
   margin: 30px;
+  flex: 3;
 }
 .data_area {
   margin-top: 27px;
@@ -109,6 +108,12 @@ nav input::-webkit-calendar-picker-indicator {
   background-color: #333b40;
 }
 
+.form_container {
+  width: 750px;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+
 table {
   width: 100%;
   margin: 0 auto;
@@ -125,9 +130,7 @@ table tr:not(:nth-of-type(1)):nth-of-type(2n) {
 }
 table td {
   text-align: right;
-}
-table td:last-child {
-  padding-right: 10px;
+  padding: 0 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
