@@ -1,0 +1,25 @@
+@use "../theme/color";
+
+.pre-match {
+    background-color: color.$light-gray;
+    display: flex;
+    flex-direction: column;
+    width: 235px;
+    margin: auto;
+    
+    &-item {
+        padding: 5px 10px;
+        text-decoration: none;
+        color: black;
+        border: 2px color.$dark-gray solid;
+        border-top: none;
+        
+        &:hover,
+        &:focus {
+            outline: none;
+            color: white;
+            text-decoration: none;
+            background-color: color.$blue-gray;
+        }
+    }
+}
