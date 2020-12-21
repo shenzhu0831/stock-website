@@ -26,6 +26,8 @@ function afterGetStockDataHandler(data) {
     currentConpanyName = reportYear.company_name;
     reportYear = transformData(reportYear, 'year_balance_sheets');
     reportRatioYear = transformData(reportRatioYear, 'year_per_share_ratios');
+    chartAssetYear = transformData(chartAssetYear, 'workingCapital');
+
     
     reRender(whichPage);
 }
@@ -72,7 +74,7 @@ function reRender(whichPage) {
     switch (whichPage) {
         case 'workingCapital':
             displayTitle.textContent = '營運資金週期';
-            tableBody = createChart();
+            tableBody = createChart(chartAssetYear);
             break;
         case 'balanceSheet':
             displayTitle.textContent = '資產負債表';
