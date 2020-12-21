@@ -37,12 +37,13 @@ function searchHandler(inputValue) {
     let stockCode = inputValue;
     loadingBlock.hidden = false;
     loadingAnimation.className = 'lds-hourglass';
+    lastSearchedStockCode = stockCode
+    localStorage.setItem('lastSearchedStockCode', lastSearchedStockCode);
     getStockData(stockCode)
         .then((data) => {
             afterGetStockDataHandler(data);
             loadingBlock.hidden = true;
             loadingAnimation.className = '';
-            localStorage.setItem('lastSearchedStockCode', stockCode);
         })
         .catch((error) => console.error(error));
     searchInput.value = '';
