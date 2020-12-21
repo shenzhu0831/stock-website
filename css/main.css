@@ -8,7 +8,7 @@ body {
   padding: 0;
   display: flex;
   border-radius: 10px;
-  background-color: #f3f5fb;
+  background-color: #ffffff;
 }
 
 .line {
@@ -96,46 +96,38 @@ nav input::-webkit-calendar-picker-indicator {
   padding: 0;
   border: none;
   color: #45546f;
-  background-color: #f3f5fb;
+  background-color: #ffffff;
 }
 .quarter_form:focus,
 .year_form:focus {
   box-shadow: inset 0px -5px 0px 0px #c4c4c4;
 }
 
-.form_wrapper {
-  display: grid;
-  grid-template-columns: 3fr repeat(9, 1fr);
-  grid-auto-flow: column;
-}
-.form_wrapper p {
-  margin: 0;
-  background-color: #eaecf1;
-}
-.form_wrapper div:not(.form_item_title) {
-  text-align: right;
-}
-
 .form_title {
-  grid-column-start: 1;
-  grid-column-end: 11;
   text-align: center;
   color: #ffffff;
   background-color: #333b40;
 }
 
-.form_item_title {
-  grid-column-start: 1;
-  grid-column-end: 3;
+table {
+  width: 100%;
+  margin: 0 auto;
+  line-height: 26px;
 }
-.form_item_title p {
-  margin: 0;
+table th {
+  padding: 0 10px;
 }
-.form_item_year {
-  padding: 10px 0;
-  grid-row-start: 3;
-  grid-row-end: 5;
+table tr:nth-of-type(1) {
+  background-color: #eaecf1;
+}
+table tr:not(:nth-of-type(1)):nth-of-type(2n) {
   background-color: #f4f4f4;
+}
+table td {
+  text-align: right;
+}
+table td:last-child {
+  padding-right: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
