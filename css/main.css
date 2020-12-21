@@ -2,9 +2,13 @@ body {
   background-color: #c4d6f4;
 }
 
+main {
+  padding: 60px;
+}
+
 .wrapper {
-  margin: 60px;
   display: flex;
+  min-height: 600px;
   border-radius: 10px;
   background-color: #ffffff;
 }
@@ -30,8 +34,8 @@ input:focus {
 }
 
 nav {
-  margin: 30px;
-  flex: 1;
+  padding: 30px;
+  flex: 0;
 }
 nav h1 {
   text-align: center;
@@ -72,9 +76,9 @@ nav input::-webkit-calendar-picker-indicator {
 }
 
 .data {
-  max-width: 1040px;
-  margin: 30px;
-  flex: 3;
+  width: 1px;
+  padding: 30px;
+  flex: 1;
 }
 .data_area {
   margin-top: 27px;
@@ -110,7 +114,7 @@ nav input::-webkit-calendar-picker-indicator {
 }
 
 .form_container {
-  overflow-y: auto;
+  overflow-x: auto;
   white-space: nowrap;
 }
 
@@ -119,14 +123,24 @@ table {
   margin: 0 auto;
   line-height: 26px;
 }
-table th {
-  padding: 0 10px;
+table tr {
+  position: relative;
 }
 table tr:nth-of-type(1) {
   background-color: #eaecf1;
+  position: sticky;
+}
+table tr:not(:nth-of-type(1)):nth-of-type(n) {
+  background-color: white;
 }
 table tr:not(:nth-of-type(1)):nth-of-type(2n) {
   background-color: #f4f4f4;
+}
+table th {
+  padding: 0 10px;
+  position: sticky;
+  left: 0;
+  background-color: inherit;
 }
 table td {
   text-align: right;

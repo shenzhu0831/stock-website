@@ -3,9 +3,12 @@
 body {
     background-color: color.$light-blue;
 }
+main {
+    padding: 60px;
+}
 .wrapper {
-    margin: 60px;
     display: flex;
+    min-height: 600px;
     border-radius: 10px;
     background-color: color.$white;
 }

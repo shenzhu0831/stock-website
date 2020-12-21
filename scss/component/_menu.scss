@@ -1,8 +1,8 @@
 @use "../theme/font";
 @use "../theme/color";
 nav {
-    margin: 30px;
-    flex: 1;
+    padding: 30px;
+    flex: 0;
     & h1 {
         text-align: center;
     }

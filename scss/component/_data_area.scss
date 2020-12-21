@@ -1,8 +1,9 @@
 @use "../theme/color";
 .data {
-    max-width: 1040px;
-    margin: 30px;
-    flex: 3;
+    // max-width: 1040px;
+    width: 1px;
+    padding: 30px;
+    flex: 1;
     &_area {
         margin-top: 27px;
     }
@@ -34,7 +35,7 @@
 }
 .form_container {
     // width: 750px;
-    overflow-y: auto;
+    overflow-x: auto;
     white-space: nowrap;
 }
 table {
@@ -42,14 +43,24 @@ table {
     margin: 0 auto;
     line-height: 26px;
 
-    th {
-        padding: 0 10px;
+    tr {
+        position: relative;
     }
     tr:nth-of-type(1) {
         background-color: color.$gray;
+        position: sticky;
+    }
+    tr:not(:nth-of-type(1)):nth-of-type(n) {
+        background-color: white;
     }
     tr:not(:nth-of-type(1)):nth-of-type(2n) {
         background-color: color.$lighter-gray;
+    }
+    th {
+        padding: 0 10px;
+        position: sticky;
+        left: 0;
+        background-color: inherit;
     }
     td {
         text-align: right;
