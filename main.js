@@ -113,12 +113,10 @@ function reRender(whichPage) {
             displayTitle.textContent = '資產負債表';
             console.log(lastSearchedStockCode, currentConpanyName, displayTitle.textContent);
             tableBody = createTableBody(reportYear);
-            tableBody.theadText.innerText = `${lastSearchedStockCode}_${currentConpanyName}_${displayTitle.textContent}_年`;
             break;
         case 'perShareRations':
             displayTitle.textContent = '每股比例表';
             tableBody = createTableBody(reportRatioYear);
-            tableBody.theadText.innerText = `${lastSearchedStockCode}_${currentConpanyName}_${displayTitle.textContent}_年`;
             break;
         default:
             throw 'can not match any page';
