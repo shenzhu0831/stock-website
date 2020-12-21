@@ -76,6 +76,7 @@ nav input::-webkit-calendar-picker-indicator {
 }
 
 .data {
+  position: relative;
   width: 1px;
   padding: 30px;
   flex: 1;
