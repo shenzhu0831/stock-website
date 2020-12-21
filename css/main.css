@@ -72,6 +72,7 @@ nav input::-webkit-calendar-picker-indicator {
 }
 
 .data {
+  max-width: 750px;
   margin: 30px;
   flex: 3;
 }
@@ -109,7 +110,6 @@ nav input::-webkit-calendar-picker-indicator {
 }
 
 .form_container {
-  width: 750px;
   overflow-y: auto;
   white-space: nowrap;
 }

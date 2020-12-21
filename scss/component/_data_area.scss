@@ -1,5 +1,6 @@
 @use "../theme/color";
 .data {
+    max-width: 750px;
     margin: 30px;
     flex: 3;
     &_area {
@@ -32,7 +33,7 @@
     background-color: color.$dark-blue;
 }
 .form_container {
-    width: 750px;
+    // width: 750px;
     overflow-y: auto;
     white-space: nowrap;
 }
