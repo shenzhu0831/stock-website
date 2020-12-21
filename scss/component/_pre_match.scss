@@ -1,11 +1,18 @@
 @use "../theme/color";
 
 .pre-match {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     background-color: color.$light-gray;
     display: flex;
     flex-direction: column;
-    width: 235px;
+    width: 228px;
     margin: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 10;
     
     &-item {
         padding: 5px 10px;
@@ -13,7 +20,10 @@
         color: black;
         border: 2px color.$dark-gray solid;
         border-top: none;
-        
+        &:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
         &:hover,
         &:focus {
             outline: none;
