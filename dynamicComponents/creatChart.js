@@ -1,7 +1,7 @@
-// document.querySelector('.chart-graph').innerHTML = `<canvas id="myChart"></canvas>`
 
 function createChart() {
-  var canvas = document.getElementById('myChart').getContext('2d');
+  var canvas = document.createElement('canvas')
+  canvas.getContext('2d');
 
   // 繪製表格
   var myLineChart = new Chart(canvas, {
@@ -68,7 +68,7 @@ function createChart() {
     }
   });
 
-  return myLineChart
+  return canvas;
 }
 
-export { createChart };
+export default createChart ;
