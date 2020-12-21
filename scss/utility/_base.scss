@@ -3,13 +3,11 @@
 body {
     background-color: color.$light-blue;
 }
-.container {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    padding: 0;
+.wrapper {
+    margin: 60px;
     display: flex;
     border-radius: 10px;
-    background-color: color.$white_gray;
+    background-color: color.$white;
 }
 .line {
     border-right: 3px solid;
