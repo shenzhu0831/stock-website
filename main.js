@@ -10,7 +10,7 @@ const perShareRatiosButton = document.getElementById('per_share_ratios');
 const workingCapitalButton = document.getElementById('workingCapital');
 const displayTitle = document.querySelector('div.data_title>h1');
 const displayArea = document.querySelector('div[class="data_area"]');
-const formTitle = displayArea.querySelector('div.form_title');
+// const formTitle = displayArea.querySelector('div.form_title');
 const formContainer = displayArea.querySelector('div.form_container');
 
 let reportYear = localStorage.getItem('reportYear') || undefined;
@@ -84,7 +84,7 @@ function reRender(whichPage) {
         default:
             throw 'can not match any page';
     }
-    formTitle.textContent = `${lastSearchedStockCode}_${currentConpanyName}_${displayTitle.textContent}_年`;
+    tableBody.theadText.innerText = `${lastSearchedStockCode}_${currentConpanyName}_${displayTitle.textContent}_年`;
     formContainer.textContent = '';
     formContainer.append(tableBody);
 }
