@@ -64,6 +64,7 @@ searchInput.addEventListener('input', function () {
             event.preventDefault();
             if (event.code === 'ArrowDown' && this.nextElementSibling) this.nextElementSibling.focus();
             if (event.code === 'ArrowUp' && this.previousElementSibling) this.previousElementSibling.focus();
+            if (event.code === 'ArrowUp' && !this.previousElementSibling) searchInput.focus();
             if (event.code === 'Enter') searchHandler(this.dataset.code);
         })
         itemElement.addEventListener('click', function () {
@@ -112,7 +113,6 @@ function reRender(whichPage) {
             break;
         case 'balanceSheet':
             displayTitle.textContent = '資產負債表';
-            console.log(lastSearchedStockCode, currentConpanyName, displayTitle.textContent);
             tableBody = createTableBody(reportYear);
             break;
         case 'perShareRations':
