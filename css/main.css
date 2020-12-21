@@ -72,7 +72,7 @@ nav input::-webkit-calendar-picker-indicator {
 }
 
 .data {
-  max-width: 750px;
+  max-width: 1040px;
   margin: 30px;
   flex: 3;
 }
