@@ -3,11 +3,6 @@ import { isNeedIndent } from '../scripts/checkIndent.js';
 
 function createTableBody(incomeDataArray) {
     const wrapper = document.createElement('table');
-    const caption = document.createElement('caption');
-    caption.className = 'form_title';
-    caption.style.captionSide = 'top';
-    wrapper.append(caption);
-    wrapper.theadText = caption;
 
     Object.keys(incomeDataArray).forEach((categoryKey) => {
         const tr = document.createElement('tr');

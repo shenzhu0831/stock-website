@@ -10,7 +10,7 @@ const perShareRatiosButton = document.getElementById('per_share_ratios');
 const workingCapitalButton = document.getElementById('workingCapital');
 const displayTitle = document.querySelector('div.data_title>h1');
 const displayArea = document.querySelector('div[class="data_area"]');
-// const formTitle = displayArea.querySelector('div.form_title');
+const formTitle = displayArea.querySelector('div.form_title');
 const formContainer = displayArea.querySelector('div.form_container');
 const loadingBlock = document.getElementById('loading-animation');
 const loadingAnimation = loadingBlock.querySelector('div');
@@ -77,6 +77,7 @@ function reRender(whichPage) {
     switch (whichPage) {
         case 'balanceSheet':
             displayTitle.textContent = '資產負債表';
+            console.log(lastSearchedStockCode, currentConpanyName, displayTitle.textContent);
             tableBody = createTableBody(reportYear);
             break;
         case 'perShareRations':
@@ -90,7 +91,7 @@ function reRender(whichPage) {
         default:
             throw 'can not match any page';
     }
-    tableBody.theadText.innerText = `${lastSearchedStockCode}_${currentConpanyName}_${displayTitle.textContent}_年`;
+    formTitle.innerText = `${lastSearchedStockCode}_${currentConpanyName}_${displayTitle.textContent}_年`
     formContainer.textContent = '';
     formContainer.append(tableBody);
 }
