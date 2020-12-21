@@ -42,6 +42,8 @@ table {
     width: 100%;
     margin: 0 auto;
     line-height: 26px;
+    border-collapse: separate;
+    border-spacing: 0;
 
     tr {
         position: relative;
@@ -61,6 +63,7 @@ table {
         position: sticky;
         left: 0;
         background-color: inherit;
+        border-right: 1px dashed lightgray;
     }
     td {
         text-align: right;
