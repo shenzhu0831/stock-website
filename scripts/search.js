@@ -1,5 +1,12 @@
 const accessibleStockCode = ['2330', '3043'];
 
+function findMatches(wordToMatch) {
+    return accessibleStockCode.filter(item => {
+        const regex = new RegExp('^' + wordToMatch);
+        return item.match(regex);
+    });
+}
+
 async function getStockData(stockCodeString) {
     if (!accessibleStockCode.includes(stockCodeString)) return;
 
@@ -40,4 +47,4 @@ async function getStockData(stockCodeString) {
     return stockDataSet;
 }
 
-export default getStockData;
+export { getStockData, findMatches };
