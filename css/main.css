@@ -19,12 +19,12 @@ main {
 
 .line {
   border-right: 3px solid;
-  color: #eaecf1;
+  color: #c4c4c4;
 }
 
 h1 {
   margin-bottom: 0;
-  color: #45546f;
+  color: #ffffff;
   font-size: 28px;
 }
 
@@ -108,8 +108,8 @@ nav input::-webkit-calendar-picker-indicator {
 .year_form {
   padding: 0;
   border: none;
-  color: #45546f;
-  background-color: #ffffff;
+  color: #ffffff;
+  background: none;
 }
 .quarter_form:focus,
 .year_form:focus {
@@ -120,6 +120,7 @@ nav input::-webkit-calendar-picker-indicator {
   text-align: center;
   color: #ffffff;
   background-color: #333b40;
+  padding: 10px 0;
 }
 
 .form_container {
