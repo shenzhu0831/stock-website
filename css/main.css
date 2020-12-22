@@ -1,5 +1,7 @@
 body {
-  background-color: #c4d6f4;
+  height: 100%;
+  background: url(../images/background-image.jpg) no-repeat center;
+  background-size: cover;
 }
 
 main {
@@ -10,17 +12,19 @@ main {
   display: flex;
   min-height: 600px;
   border-radius: 10px;
-  background-color: #ffffff;
+  background: url(../images/background-image-blur.jpg) no-repeat center;
+  background-size: cover;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .line {
   border-right: 3px solid;
-  color: #eaecf1;
+  color: #c4c4c4;
 }
 
 h1 {
   margin-bottom: 0;
-  color: #45546f;
+  color: #ffffff;
   font-size: 28px;
 }
 
@@ -66,17 +70,21 @@ nav input::-webkit-calendar-picker-indicator {
   border: solid 3px;
   border-radius: 10px;
   border-color: #c4c4c4;
+  z-index: 50;
+  position: relative;
 }
 .search_wrap {
   margin: 30px 0;
   position: relative;
+  z-index: 50;
 }
 .search_img {
   position: absolute;
   width: 29px;
   height: 29px;
-  right: 25px;
-  top: 15px;
+  right: 15px;
+  top: 10px;
+  z-index: 50;
 }
 
 .data {
@@ -104,8 +112,8 @@ nav input::-webkit-calendar-picker-indicator {
 .year_form {
   padding: 0;
   border: none;
-  color: #45546f;
-  background-color: #ffffff;
+  color: #ffffff;
+  background: none;
 }
 .quarter_form:focus,
 .year_form:focus {
@@ -116,6 +124,7 @@ nav input::-webkit-calendar-picker-indicator {
   text-align: center;
   color: #ffffff;
   background-color: #333b40;
+  padding: 10px 0;
 }
 
 .form_unit {
@@ -160,26 +169,39 @@ table td {
   padding: 0 10px;
 }
 
+canvas {
+  background-color: #fff;
+  padding: 10px;
+}
+
 .pre-match {
   position: absolute;
+  top: 33px;
   left: 0;
   right: 0;
   margin: 0 auto;
   background-color: #e0e0e0;
   display: flex;
   flex-direction: column;
-  width: 228px;
   margin: auto;
+  padding-top: 20px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   z-index: 10;
 }
 .pre-match-item {
-  padding: 5px 10px;
+  padding: 5px 26px;
   text-decoration: none;
   color: black;
   border: 2px #c4c4c4 solid;
   border-top: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+.pre-match-item span:last-child {
+  font-size: smaller;
 }
 .pre-match-item:last-child {
   border-bottom-left-radius: 10px;

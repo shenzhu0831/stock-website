@@ -31,7 +31,9 @@ function afterGetStockDataHandler(data) {
     currentConpanyName = reportYear.company_name;
     reportYear = transformData(reportYear, 'year_balance_sheets');
     reportRatioYear = transformData(reportRatioYear, 'year_per_share_ratios');
+    chartAssetYear = transformData(chartAssetYear, 'workingCapital');
 
+    
     reRender(whichPage);
 }
 
@@ -59,9 +61,9 @@ searchInput.addEventListener('input', function () {
     preMatchArray.forEach(item => {
         const itemElement = document.createElement('a');
         itemElement.tabIndex = 0;
-        itemElement.dataset.code = item;
+        itemElement.dataset.code = item.code;
         itemElement.className = 'pre-match-item';
-        itemElement.innerText = item;
+        itemElement.innerHTML = `<span>${item.code}</span><span>${item.name}</span>`;
         itemElement.addEventListener('keydown', function (event) {
             event.preventDefault();
             if (event.code === 'ArrowDown' && this.nextElementSibling) this.nextElementSibling.focus();
@@ -111,7 +113,7 @@ function reRender(whichPage) {
     switch (whichPage) {
         case 'workingCapital':
             displayTitle.textContent = '營運資金週期';
-            tableBody = createChart();
+            tableBody = createChart(chartAssetYear);
             break;
         case 'balanceSheet':
             displayTitle.textContent = '資產負債表';
