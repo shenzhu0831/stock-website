@@ -1,5 +1,7 @@
 body {
-  background-color: #c4d6f4;
+  height: 100%;
+  background: url(../images/background-image.jpg) no-repeat center;
+  background-size: cover;
 }
 
 main {
@@ -10,17 +12,19 @@ main {
   display: flex;
   min-height: 600px;
   border-radius: 10px;
-  background-color: #ffffff;
+  background: url(../images/background-image-blur.jpg) no-repeat center;
+  background-size: cover;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .line {
   border-right: 3px solid;
-  color: #eaecf1;
+  color: #c4c4c4;
 }
 
 h1 {
   margin-bottom: 0;
-  color: #45546f;
+  color: #ffffff;
   font-size: 28px;
 }
 
@@ -104,8 +108,8 @@ nav input::-webkit-calendar-picker-indicator {
 .year_form {
   padding: 0;
   border: none;
-  color: #45546f;
-  background-color: #ffffff;
+  color: #ffffff;
+  background: none;
 }
 .quarter_form:focus,
 .year_form:focus {
@@ -116,6 +120,7 @@ nav input::-webkit-calendar-picker-indicator {
   text-align: center;
   color: #ffffff;
   background-color: #333b40;
+  padding: 10px 0;
 }
 
 .form_container {
@@ -153,6 +158,11 @@ table th {
 table td {
   text-align: right;
   padding: 0 10px;
+}
+
+canvas {
+  background-color: #fff;
+  padding: 10px;
 }
 
 .pre-match {

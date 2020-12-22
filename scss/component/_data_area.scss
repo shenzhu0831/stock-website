@@ -22,8 +22,8 @@
 .year_form {
     padding: 0;
     border: none;
-    color: color.$blue;
-    background-color: color.$white;
+    color: color.$white;
+    background: none;
     &:focus {
         box-shadow: inset 0px -5px 0px 0px color.$dark-gray;
     }
@@ -32,6 +32,7 @@
     text-align: center;
     color: color.$white;
     background-color: color.$dark-blue;
+    padding: 10px 0;
 }
 .form_container {
     // width: 750px;
@@ -69,6 +70,11 @@ table {
         text-align: right;
         padding: 0 10px;
     }
+}
+
+canvas {
+    background-color: #fff;
+    padding: 10px;
 }
 
 // .form_wrapper {
