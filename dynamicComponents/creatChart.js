@@ -2,17 +2,17 @@ function createChart(incomeData) {
   var canvas = document.createElement('canvas')
   canvas.getContext('2d');
 
-  const years = incomeData.year.reverse()
-  const daysOfCashReceivable = incomeData.days_of_cash_receivable.reverse();
-  const daysOfSales = incomeData.days_of_sales.reverse();
-  const daysOfAccountsPayableTurnover = incomeData.days_of_accounts_payable_turnover.reverse();
-  const daysOfOperationTurnover = incomeData.days_of_operation_turnover.reverse();
-  const daysOfCashTurnove = incomeData.days_of_cash_turnover.reverse();
+  const years = incomeData.year;
+  const daysOfCashReceivable = incomeData.days_of_cash_receivable;
+  const daysOfSales = incomeData.days_of_sales;
+  const daysOfAccountsPayableTurnover = incomeData.days_of_accounts_payable_turnover;
+  const daysOfOperationTurnover = incomeData.days_of_operation_turnover;
+  const daysOfCashTurnove = incomeData.days_of_cash_turnover;
 
   let yearsArray = years.map(year => year.toString());
     // yearsArray.push(numberOfYear);
 
-  let yAxes = yearsArray.reverse()
+  // let yAxes = yearsArray.reverse()
   
   // 繪製表格
   var myLineChart = new Chart(canvas, {
@@ -67,7 +67,7 @@ function createChart(incomeData) {
           display: true,
             type: 'category',
             // 由左到右
-            labels: yAxes,
+            labels: yearsArray,
         }],
         yAxes: [{
           ticks: {
