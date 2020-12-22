@@ -112,10 +112,15 @@ nav input::-webkit-calendar-picker-indicator {
   box-shadow: inset 0px -5px 0px 0px #c4c4c4;
 }
 
-.form_title {
+.form_header {
   text-align: center;
   color: #ffffff;
   background-color: #333b40;
+}
+
+.form_unit {
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .form_container {

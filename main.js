@@ -11,11 +11,13 @@ const perShareRatiosButton = document.getElementById('per_share_ratios');
 const workingCapitalButton = document.getElementById('workingCapital');
 const displayTitle = document.querySelector('div.data_title>h1');
 const displayArea = document.querySelector('div[class="data_area"]');
-const formTitle = displayArea.querySelector('div.form_title');
+const formTitle = displayArea.querySelector('span.form_title');
 const formContainer = displayArea.querySelector('div.form_container');
 const loadingBlock = document.getElementById('loading-animation');
 const loadingAnimation = loadingBlock.querySelector('div');
 const preMatch = document.querySelector('div.pre-match');
+
+const displayUnit = document.querySelector('span.form_unit');
 
 let reportYear = localStorage.getItem('reportYear') || undefined;
 let reportRatioYear = localStorage.getItem('reportRatioYear') || undefined;
@@ -29,7 +31,7 @@ function afterGetStockDataHandler(data) {
     currentConpanyName = reportYear.company_name;
     reportYear = transformData(reportYear, 'year_balance_sheets');
     reportRatioYear = transformData(reportRatioYear, 'year_per_share_ratios');
-    
+
     reRender(whichPage);
 }
 
@@ -113,10 +115,12 @@ function reRender(whichPage) {
             break;
         case 'balanceSheet':
             displayTitle.textContent = '資產負債表';
+            displayUnit.innerText = '單位：百萬';
             tableBody = createTableBody(reportYear);
             break;
         case 'perShareRations':
             displayTitle.textContent = '每股比例表';
+            displayUnit.innerText = '單位：元、％';
             tableBody = createTableBody(reportRatioYear);
             break;
         default:
@@ -131,11 +135,11 @@ window.addEventListener('load', () => {
     lastSearchedStockCode = localStorage.getItem('lastSearchedStockCode') || '2330';
     whichPage = localStorage.getItem('whichPage') || 'balanceSheet';
     getStockData(lastSearchedStockCode)
-    .then((data) => {
-        afterGetStockDataHandler(data)
-        reRender(whichPage);
-        loadingBlock.hidden = true;
-        loadingAnimation.className = '';
-    })
-    .catch((error) => console.error(error));
+        .then((data) => {
+            afterGetStockDataHandler(data)
+            reRender(whichPage);
+            loadingBlock.hidden = true;
+            loadingAnimation.className = '';
+        })
+        .catch((error) => console.error(error));
 });

@@ -28,13 +28,16 @@
         box-shadow: inset 0px -5px 0px 0px color.$dark-gray;
     }
 }
-.form_title {
+.form_header {
     text-align: center;
     color: color.$white;
     background-color: color.$dark-blue;
 }
+.form_unit {
+    font-size: 12px;
+    font-weight: 500;
+}
 .form_container {
-    // width: 750px;
     overflow-x: auto;
     white-space: nowrap;
 }
