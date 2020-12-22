@@ -1,9 +1,12 @@
-const accessibleStockCode = ['2330', '3043'];
+const accessibleStock = [
+    { code: '2330', name: '台積電' }, { code: '3043', name: '科風' }
+];
+const accessibleStockCode = accessibleStock.map(stock => stock.code);
 
 function findMatches(wordToMatch) {
-    return accessibleStockCode.filter(item => {
+    return accessibleStock.filter(item => {
         const regex = new RegExp('^' + wordToMatch);
-        return item.match(regex);
+        return item.code.match(regex);
     });
 }
 

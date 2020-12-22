@@ -59,9 +59,9 @@ searchInput.addEventListener('input', function () {
     preMatchArray.forEach(item => {
         const itemElement = document.createElement('a');
         itemElement.tabIndex = 0;
-        itemElement.dataset.code = item;
+        itemElement.dataset.code = item.code;
         itemElement.className = 'pre-match-item';
-        itemElement.innerText = item;
+        itemElement.innerHTML = `<span>${item.code}</span><span>${item.name}</span>`;
         itemElement.addEventListener('keydown', function (event) {
             event.preventDefault();
             if (event.code === 'ArrowDown' && this.nextElementSibling) this.nextElementSibling.focus();
