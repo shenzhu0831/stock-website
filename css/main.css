@@ -70,17 +70,21 @@ nav input::-webkit-calendar-picker-indicator {
   border: solid 3px;
   border-radius: 10px;
   border-color: #c4c4c4;
+  z-index: 50;
+  position: relative;
 }
 .search_wrap {
   margin: 30px 0;
   position: relative;
+  z-index: 50;
 }
 .search_img {
   position: absolute;
   width: 29px;
   height: 29px;
-  right: 25px;
-  top: 15px;
+  right: 15px;
+  top: 10px;
+  z-index: 50;
 }
 
 .data {
@@ -167,14 +171,15 @@ canvas {
 
 .pre-match {
   position: absolute;
+  top: 33px;
   left: 0;
   right: 0;
   margin: 0 auto;
   background-color: #e0e0e0;
   display: flex;
   flex-direction: column;
-  width: 228px;
   margin: auto;
+  padding-top: 20px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   z-index: 10;
