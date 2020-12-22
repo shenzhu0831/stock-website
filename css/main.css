@@ -160,6 +160,11 @@ table td {
   padding: 0 10px;
 }
 
+canvas {
+  background-color: #fff;
+  padding: 10px;
+}
+
 .pre-match {
   position: absolute;
   left: 0;
